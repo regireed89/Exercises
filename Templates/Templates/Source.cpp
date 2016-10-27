@@ -59,12 +59,16 @@ C Clamp(C a, C b, C c)
 DESCRIPTION: As above but first checks if a and b represent alphabetical characters.If so,
 	the function will return the value that is alphabetically lower.
 	INPUT : Two template arguments(a, b).
-	OUTPUT : The alphabetically lower of the two values a and b.*/template<typename G>
+	OUTPUT : The alphabetically lower of the two values a and b.*/
+template<typename G>
 G MinChar(G a, G b)
 {
 	G min = (a < b) ? a : b;
 	return min;
-}/*5. Max(specialised for char)
+}
+
+
+/*5. Max(specialised for char)
 DESCRIPTION: As above but first checks if a and b represent alphabetical characters.If so,
 	the function will return the value that is alphabetically higher.
 	INPUT : Two template arguments(a, b).
