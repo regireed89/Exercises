@@ -6,8 +6,28 @@ struct nodeType
 {
 	int info;
 	nodeType*link;
-
 };
+
+
+template<typename Type>
+class LinkedList
+{
+protected:
+	int count;
+	nodeType<Type> *first;
+	nodeType<Type> *last;
+public:
+	bool Add(const &Type);
+	LinkedList() {};
+	const Type front();
+	const int length();
+	void print();
+};
+
+
+
+
+
 
 
 int main()
