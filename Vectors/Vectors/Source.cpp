@@ -11,6 +11,7 @@ private:
 	float x, y;
 
 public:
+	Vector2() {};
 	Vector2(float a, float b)
 	{
 		x = a;
@@ -77,8 +78,10 @@ int main()
 	Vector2 D = A.subtract(B);
 	Vector2 E = A.ScalarMult(B);
 	float F = A.Magnitude();
-	float G = A.Normalize();
-	float H = A.Normalize().DotProduct(B.Normalize());
+	float G = B.Magnitude();
+	float H = A.Normalize();
+	float I = B.Normalize();
+	//float J = A.DotProduct(B.Normalize());
 	
 	assert(1 + 1 == 2);
 
