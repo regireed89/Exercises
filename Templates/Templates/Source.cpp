@@ -20,10 +20,10 @@ template<typename T>
 DESCRIPTION: Returns the higher of two values.
 	INPUT : Two template arguments(a, b).
 	OUTPUT : The higher of the two values a and b.*/
-template<typename M>
-M Max(M a, M b)
+template<typename T>
+T Max(T a, T b)
 {
-	M max = (a > b) ? a : b;
+	T max = (a > b) ? a : b;
 	return max;
 }
 
@@ -33,8 +33,8 @@ M Max(M a, M b)
 DESCRIPTION : Constrains a value within the range of two other values.
 	INPUT : Three template arguments(min, max, val).
 	OUTPUT : The value of the val constrained between min and max.*/
-template<typename C>
-C Clamp(C a, C b, C c)
+template<typename T>
+T Clamp(T a, T b, T c)
 {
 	if (c >= a && c <= b)
 	{
@@ -60,10 +60,15 @@ DESCRIPTION: As above but first checks if a and b represent alphabetical charact
 	the function will return the value that is alphabetically lower.
 	INPUT : Two template arguments(a, b).
 	OUTPUT : The alphabetically lower of the two values a and b.*/
+<<<<<<< HEAD
 template<typename G>
 G MinChar(G a, G b)
+=======
+template<typename T>
+T MinChar(T a, T b)
+>>>>>>> origin/master
 {
-	G min = (a < b) ? a : b;
+	T min = (a < b) ? a : b;
 	return min;
 }
 
@@ -73,10 +78,10 @@ DESCRIPTION: As above but first checks if a and b represent alphabetical charact
 	the function will return the value that is alphabetically higher.
 	INPUT : Two template arguments(a, b).
 	OUTPUT : The alphabetically higher of the two values a and b.*/
-template<typename B>
-B MaxChar(B a, B b)
+template<typename T>
+T MaxChar(T a, T b)
 {
-	B max = (a > b) ? a : b;
+	T max = (a > b) ? a : b;
 	return max;
 }
 
@@ -85,21 +90,25 @@ Create a template class for storing any data - type.The data itself should be st
 pointer to an array on the heap.
 Your class should have the following public template functions :*/
 
-template<typename Q>
+template<typename T>
 class Stuff
 {
 public:
+	Stuff() {};
 	/*1. Constructor
 	DESCRIPTION : Creates an array on the heap of the specified capacity.The new heap
 	memory should be zeroed using memset.You should store the value of
 	capacity and size for later use(size should start at 0).
 	INPUT : A single integer specifying the capacity for the data array.
 	OUTPUT : N / A.*/
-	Q Constructor(Q array, Q arraysize)
+	T Constructor(T arrray[], T arraysize)
 	{
-		Q array[arraysize];
+		T arrray[arraysize];
 		memset(array, 0, arraysize);
-
+		for (arraysize = 0; )
+		{
+			new arrray[arraysize];
+		}.
 	}
 
 
@@ -135,5 +144,5 @@ void main()
 	int d = Clamp(1, 9, 12);
 	char j = MinChar('h', 'g');
 	char r = MaxChar('h', 'g');
-
+	int Contstructor();
 }
