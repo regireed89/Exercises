@@ -17,7 +17,7 @@ public:
 		y = b;
 	}
 
-	Vector2 add(Vector2 other)
+	Vector2 add(Vector2 &other)
 	{
 
 		float a = this->x + other.x;
@@ -26,18 +26,18 @@ public:
 		return Vector2(a, b);
 	}
 
-	Vector2 subtract(Vector2 other)
+	Vector2 subtract(Vector2 &other)
 	{
-		float a = x - other.x;
-		float b = y - other.y;
+		float a = this->x - other.x;
+		float b = this->y - other.y;
 
 		return Vector2(a, b);
 	}
 
-	Vector2 ScalarMult(Vector2 mult)
+	Vector2 ScalarMult(Vector2 &mult)
 	{
-		float a = x * mult.x;
-		float b = y * mult.y;
+		float a = this->x * mult.x;
+		float b = this->y * mult.y;
 
 		return Vector2(a, b);
 	}
@@ -50,7 +50,7 @@ public:
 		 return a;
 	}
 
-	float Normal()
+	float Normalize()
 	{
 		float a = x / Magnitude();
 		float b = y / Magnitude();
@@ -58,26 +58,27 @@ public:
 		return a, b;
 	}
 
-	Vector2 DotProduct(Vector2 other)
+	float DotProduct(Vector2 &other)
 	{
-		float a = 
-			float b;
+		float a = this->x * other.x;
+		float b = this->y * other.y;
+		float c = a + b;
 
-		return other;
+		return c;
 	}
 
 };
 
 int main()
 {
-	Vector2 A = Vector2(4.5, 5.2);
-	Vector2 B = Vector2(6.3, 2.4);
+	Vector2 A = Vector2(4, 5);
+	Vector2 B = Vector2(6, 2);
 	Vector2 C = A.add(B);
 	Vector2 D = A.subtract(B);
 	Vector2 E = A.ScalarMult(B);
 	float F = A.Magnitude();
-	float G = A.Normal();
-	Vector2 H = A.DotProduct(B);
+	float G = A.Normalize();
+	float H = A.Normalize().DotProduct(B.Normalize());
 	
 	assert(1 + 1 == 2);
 
