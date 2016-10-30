@@ -69,21 +69,108 @@ public:
 	}
 
 };
+class Vector3
+{
 
+private:
+
+	float x, y, z;
+
+public:
+	Vector3() {};
+	Vector3(float a, float b, float c)
+	{
+		x = a;
+		y = b;
+		z = c;
+	}
+
+	Vector3 add(Vector3 &other)
+	{
+
+		float a = this->x + other.x;
+		float b = this->y + other.y;
+		float c = this->z + other.z;
+
+		return Vector3(a, b, c);
+	}
+
+	Vector3 subtract(Vector3 &other)
+	{
+		float a = this->x - other.x;
+		float b = this->y - other.y;
+		float c = this->z - other.z;
+		return Vector3(a, b, c);
+	}
+
+	Vector3 ScalarMult(Vector3 &mult)
+	{
+		float a = this->x * mult.x;
+		float b = this->y * mult.y;
+		float c = this->z * mult.z;
+
+		return Vector3(a, b, c);
+	}
+
+	float Magnitude()
+	{
+		float a = sqrt(x*x + y*y + z*z);
+
+
+		return a;
+	}
+
+	float Normalize()
+	{
+		float a = x / Magnitude();
+		float b = y / Magnitude();
+		float c = z / Magnitude();
+
+		return a, b, c;
+	}
+
+	float DotProduct(Vector3 &other)
+	{
+		float a = this->x * other.x;
+		float b = this->y * other.y;
+		float c = this->z * other.z;
+
+		float product = a + b + z;
+
+		return product;
+	}
+
+
+
+
+};
 int main()
 {
-	Vector2 A = Vector2(4, 5);
-	Vector2 B = Vector2(6, 2);
-	Vector2 C = A.add(B);
-	Vector2 D = A.subtract(B);
-	Vector2 E = A.ScalarMult(B);
-	float F = A.Magnitude();
-	float G = B.Magnitude();
-	float H = A.Normalize();
-	float I = B.Normalize();
-	//float J = A.DotProduct(B);
+	Vector2 Vec2A = Vector2(4, 5);
+	Vector2 Vec2B = Vector2(6, 2);
+	Vector2 Vec2Add = Vec2A.add(Vec2B);
+	Vector2 Vec2Sub = Vec2A.subtract(Vec2B);
+	Vector2 Vec2Mult = Vec2A.ScalarMult(Vec2B);
+	float Vec2AMag = Vec2A.Magnitude();
+	float Vec2BMag = Vec2B.Magnitude();
+	float Vec2ANorm = Vec2A.Normalize();
+	float Vec2BNorm = Vec2B.Normalize();
+	float Vec2Dot = Vec2A.DotProduct(Vec2B);
 	
-	assert(1 + 1 == 2);
+
+	Vector3 Vec3A = Vector3(4, 5, 6);
+	Vector3 Vec3B = Vector3(6, 2, 9);
+	Vector3 Vec3Add = Vec3A.add(Vec3B);
+	Vector3 Vec3Sub = Vec3A.subtract(Vec3B);
+	Vector3 Vec3Mult = Vec3A.ScalarMult(Vec3B);
+	float Vec3KMag = Vec3A.Magnitude();
+	float Vec3LMag = Vec3B.Magnitude();
+	float Vec3KNorm = Vec3A.Normalize();
+	float Vec3LNorm = Vec3B.Normalize();
+	float Vec3Dot = Vec3A.DotProduct(Vec3B);
+
+
+	
 
 
 	system("pause");
