@@ -81,7 +81,7 @@ int main()
 	float G = B.Magnitude();
 	float H = A.Normalize();
 	float I = B.Normalize();
-	//float J = A.DotProduct(B.Normalize());
+	//float J = A.DotProduct(B);
 	
 	assert(1 + 1 == 2);
 
