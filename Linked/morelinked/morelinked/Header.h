@@ -30,7 +30,7 @@ public:
 	linkedListIterator<Type> operator++()
 	{
 
-		
+		current = current->link;
 		
 	}
 	bool operator==(linkedListIterator<Type>& list)const;
@@ -48,4 +48,3 @@ public:
 
 
 };
-
