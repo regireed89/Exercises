@@ -60,8 +60,13 @@ DESCRIPTION: As above but first checks if a and b represent alphabetical charact
 	the function will return the value that is alphabetically lower.
 	INPUT : Two template arguments(a, b).
 	OUTPUT : The alphabetically lower of the two values a and b.*/
+<<<<<<< HEAD
+template<typename G>
+G MinChar(G a, G b)
+=======
 template<typename T>
 T MinChar(T a, T b)
+>>>>>>> origin/master
 {
 	T min = (a < b) ? a : b;
 	return min;

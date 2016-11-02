@@ -19,7 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
+<<<<<<< HEAD
     <ProjectGuid>{40CC1226-78E1-4571-9CB1-FF4E70670763}</ProjectGuid>
+=======
+    <ProjectGuid>{40D5ACA7-F586-4DA4-9168-340858B6090D}</ProjectGuid>
+>>>>>>> origin/master
     <RootNamespace>Linked</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
