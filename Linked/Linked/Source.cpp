@@ -5,18 +5,16 @@ template<typename Type>
 class Node
 {
 protected:
-	int count;
+	int count = 0;
 	nodeType<Type>*first;
 	nodeType<Type>*last;
 public:
 
 	bool Add(const&Type);
-	LinkedList;
-	const Type front();
-	const int length();
+	LinkedList() {};
+	Type front()const;
+	int length()const;
 	void Print();
-
-
 
 };
 
