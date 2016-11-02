@@ -25,12 +25,20 @@ public:
 	}
 	Type operator*()
 	{
-
+		return current->info;	
+	}
+	linkedListIterator<Type> operator++()
+	{
 
 		
+		
 	}
+	bool operator==(linkedListIterator<Type>& list)const;
+	{
 
 
+
+	}
 
 
 
