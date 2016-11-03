@@ -26,13 +26,13 @@ public:
 	}
 	Type operator*()
 	{
-		return current->info;	
+		return current->info;
 	}
 	linkedListIterator<Type> operator++()
 	{
 
 		current = current->link;
-		
+
 	}
 	bool operator==(linkedListIterator<Type>& list)const;
 	{
@@ -46,6 +46,7 @@ public:
 		}
 
 	}
+
 	bool operator!=(linkedListIterator<Type>& list)const
 	{
 		if (current != current)
@@ -68,6 +69,7 @@ protected:
 	int count;
 	nodeType<Type> *first;
 	nodeType<Type> *last;
+	nodeType<Type> *node;
 public:
 	const linkedListType<Type>& operator=(const linkedListType<Type>&otherList) {};
 
@@ -94,7 +96,7 @@ public:
 		while (first != nullptr)
 		{
 			cout << first->info;
-			
+
 		}
 	}
 
@@ -105,7 +107,7 @@ public:
 
 	void destroyList()
 	{
-		first = ;
+		first;
 		last = NULL;
 		count = 0;
 	}
@@ -113,12 +115,28 @@ public:
 	Type front()const
 	{
 		assert(count != 0);
-
 		return first->info;
 	}
 
+	Type back()const
+	{
+		assert(count != 0);
+		return last->info;
+	}
 
+	bool search(const Type& nodeInfo)
+	{
 
+	}
 
+	void insertFirst(const Type& nodeInfo)
+	{
+			first->info = node;
+			last->info = node;		
+			last->link = nullptr;
+			count++;
+	}
 
 };
+
+

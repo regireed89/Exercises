@@ -1,14 +1,12 @@
 #include <iostream>
+#include "Header.h"
 using namespace std;
-
-
 
 struct nodeType
 {
 	int info;
 	nodeType*link;
 };
-
 
 template<typename Type>
 class LinkedList
@@ -27,19 +25,49 @@ public:
 };
 
 template<typename Type>
-bool LinkedList<Type>::Add(const &Type)
+bool LinkedList<Type>::Add(const Type &temp)
 {
 
-	nodeType<Type> *node;
 
-	first = node;
-	
+	if (count == 0)
+	{
+		first->info = node;
+		last->info = node;
+		first->link = nullptr;
+		last->link = nullptr;
+		count++;
+	}
+	else 
+	{
+		nodeType<Type> *node = new nodeType<Type>;
+		node = first;
+		last->link = node;
+		last = node;
+		if (count == 1)
+		{
+			first->link = node;
+		}
+		last->info = temp;
+		last->link = nullptr;
+		count++;
+
+	}
+
+
 	return false;
 	
 }
 
+template<typename Type>
+const Type LinkedList<Type>::front()
+{
+	return count;
+}
+
 int main()
 {
+
+
 
 
 	nodeType*head;//pointer of type nodeType
@@ -63,6 +91,16 @@ int main()
 		head = head->link;//assigning head to a new link each loop
 	}
 
+	Add(3);
+	Add(6);
+
+
+	cout << Add << endl;
+
+
+
 	system("pause");
 
 }
+
+
