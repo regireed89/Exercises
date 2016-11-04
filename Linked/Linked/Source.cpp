@@ -110,11 +110,11 @@ int main()
 		head = head->link;//assigning head to a new link each loop
 	}
 
-	/*Add(3);
+	Add(3);
 	Add(6);
 
 
-	cout << Add << endl;*/
+	cout << Add << endl;*
 
 
 
