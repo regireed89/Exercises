@@ -143,7 +143,7 @@ public:
 			nodeType<Type> *node = new nodeType<Type>;
 			node = first;
 			last->link = node;
-			last = node;
+          	last = node;
 			last->link = nullptr;
 			count++;
 		}
