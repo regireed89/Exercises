@@ -125,30 +125,62 @@ public:
 	bool search(const Type& nodeInfo)
 	{
 		
-	
+		return true;
 
 	}
 	void insertFirst(const Type& nodeInfo)
 	{
 		nodeType<Type> *node = new nodeType<Type>;
 		node = nodeInfo;
-		if(count == 0)
+		if(first == NULL)//acomodate for empty list
 		{
-			 node = first;
-			 node = last;
+			 first = node;
+			 last = node;
 			 first->link = NULL;
 			last->link = NULL;			
 		}
 		else
 		{
-			nodeType<Type> temp;
-			node = first;
-			last->link = node;
-          
-			last->link = nullptr;		
+			nodeType<Type> *temp;
+			temp = first;
+			first = node;
+			first->link = temp;					
 		}
 		count++:
 	}
+
+
+
+	void insertLast(const Type& nodeInfo)
+	{
+		nodeType<Type> *node = new nodeType<Type>;
+		node = nodeInfo;
+		if (first == NULL)//acomodate for empty list
+		{
+			first = node;
+			last = node;
+			first->link = NULL;
+			last->link = NULL;
+		}
+		else
+		{
+			nodeType<Type> *temp;
+			temp = first;
+			first = node;
+			temp->link = last;
+		}
+		count++:
+	}
+
+	void deleteNode(const Type& nodeInfo)
+	{
+
+
+
+	}
+
+
+
 
 
 

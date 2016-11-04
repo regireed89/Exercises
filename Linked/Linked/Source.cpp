@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Header.h"
+//#include "Header.h"
 using namespace std;
 
 struct nodeType
@@ -62,6 +62,12 @@ const Type LinkedList<Type>::front()
 	return count;
 }
 
+template<typename Type>
+const int LinkedList<Type>::length()
+{
+	return count;
+}
+
 int main()
 {
 
@@ -89,15 +95,16 @@ int main()
 		head = head->link;//assigning head to a new link each loop
 	}
 
-	Add(3);
+	/*Add(3);
 	Add(6);
 
 
-	cout << Add << endl;
+	cout << Add << endl;*/
 
 
 
 	system("pause");
+	return 0;
 
 }
 
