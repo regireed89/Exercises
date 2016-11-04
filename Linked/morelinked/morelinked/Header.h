@@ -69,7 +69,7 @@ protected:
 	int count;
 	nodeType<Type> *first;
 	nodeType<Type> *last;
-	nodeType<Type> *node;
+
 public:
 	const linkedListType<Type>& operator=(const linkedListType<Type>&otherList) {};
 
@@ -96,7 +96,6 @@ public:
 		while (first != nullptr)
 		{
 			cout << first->info;
-
 		}
 	}
 
@@ -131,11 +130,28 @@ public:
 
 	void insertFirst(const Type& nodeInfo)
 	{
+		if (count == 0)
+		{
+			first = new nodeType<Type>;
 			first->info = node;
-			last->info = node;		
+			last->info = node;
 			last->link = nullptr;
 			count++;
+		}
+		else
+		{
+			nodeType<Type> *node = new nodeType<Type>;
+			node = first;
+			last->link = node;
+			last = node;
+			last->link = nullptr;
+			count++;
+		}
 	}
+
+
+
+
 
 };
 

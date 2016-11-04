@@ -52,8 +52,6 @@ bool LinkedList<Type>::Add(const Type &temp)
 		count++;
 
 	}
-
-
 	return false;
 	
 }
