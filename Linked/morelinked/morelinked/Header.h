@@ -13,8 +13,8 @@ template<typename Type>
 class linkedListIterator
 {
 private:
-	nodeType<Type> * current;
-public:
+	nodeType<Type> * current; 
+public: 
 
 	linkedListIterator()
 	{
@@ -71,9 +71,8 @@ protected:
 	nodeType<Type> *last;
 
 public:
-	const linkedListType<Type>& operator=(const linkedListType<Type>&otherList) {};
 
-	void initializeList()
+	void initializeList() 
 	{
 		first = new linkedListType<Type>;
 		last = new linkedListType<Type>;
@@ -125,28 +124,30 @@ public:
 
 	bool search(const Type& nodeInfo)
 	{
+		
+	
 
 	}
-
 	void insertFirst(const Type& nodeInfo)
 	{
-		if (count == 0)
+		nodeType<Type> *node = new nodeType<Type>;
+		node = nodeInfo;
+		if(count == 0)
 		{
-			first = new nodeType<Type>;
-			first->info = node;
-			last->info = node;
-			last->link = nullptr;
-			count++;
+			 node = first;
+			 node = last;
+			 first->link = NULL;
+			last->link = NULL;			
 		}
 		else
 		{
-			nodeType<Type> *node = new nodeType<Type>;
+			nodeType<Type> temp;
 			node = first;
 			last->link = node;
-          	last = node;
-			last->link = nullptr;
-			count++;
+          
+			last->link = nullptr;		
 		}
+		count++:
 	}
 
 
