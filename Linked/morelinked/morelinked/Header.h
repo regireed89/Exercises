@@ -179,6 +179,33 @@ public:
 
 	}
 
+	linkedListIterator<Type> begin()
+	{
+		
+		current = first;
+
+		return current;
+	}
+
+	linkedListIterator<Type> end()
+	{
+		current = last;
+
+		return last;
+	}
+
+	linkedListType()
+	{
+		first = new linkedListType<Type>;
+		last = new linkedListType<Type>;
+		count = 0;
+	}
+
+	linkedListType(const linkedListType<Type> otherList)
+	{
+
+	}
+
 
 
 
