@@ -140,10 +140,86 @@ public:
 		return product;
 	}
 
+};
 
+class Vector4
+{
+private:
+	float x, y, z, w;
+public:
+	Vector4(float a, float b, float c, float d) 
+	{
+		x = a;
+		y = b;
+		z = c;
+		w = d;
+	}
+
+	Vector4 add(Vector4 &other)
+	{
+		float a = this->x + other.x;
+		float b = this->y + other.y;
+		float c = this->z + other.z;
+		float d = this->w + other.w;
+
+		return Vector4(a, b, c, d);
+	}
+	Vector4 subtract(Vector4 &other)
+	{
+		float a = this->x - other.x;
+		float b = this->y - other.y;
+		float c = this->z - other.z;
+		float d = this->w - other.w;
+
+		return Vector4(a, b, c, d);
+	}
+
+	Vector4 ScalarMult(Vector4 &mult)
+	{
+		float a = this->x * mult.x;
+		float b = this->y * mult.y;
+		float c = this->z * mult.z;
+		float d = this->w * mult.w;
+
+		return Vector4(a, b, c, d);
+	}
+	float Magnitude()
+	{
+		float a = sqrt(x*x + y*y + z*z + w*w);
+
+
+		return a;
+	}
+
+	float Normalize()
+	{
+		float a = x / Magnitude();
+		float b = y / Magnitude();
+		float c = z / Magnitude();
+		float d = w / Magnitude();
+
+		return a, b, c, d;
+	}
+
+	float DotProduct(Vector4 &other)
+	{
+		float a = this->x * other.x;
+		float b = this->y * other.y;
+		float c = this->z * other.z;
+		float d = this->w * other.w;
+
+		float product = a + b + c + d;
+
+		return product;
+	}
 
 
 };
+
+
+
+
+
 int main()
 {
 	Vector2 Vec2A = Vector2(4, 5);
