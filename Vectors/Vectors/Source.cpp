@@ -45,17 +45,17 @@ public:
 
 	float Magnitude()
 	{
-		 float a = sqrt(x*x + y*y);
-		
+		float a = sqrt(x*x + y*y);
 
-		 return a;
+
+		return a;
 	}
 
 	float Normalize()
 	{
 		float a = x / Magnitude();
 		float b = y / Magnitude();
-		
+
 		return a, b;
 	}
 
@@ -147,7 +147,7 @@ class Vector4
 private:
 	float x, y, z, w;
 public:
-	Vector4(float a, float b, float c, float d) 
+	Vector4(float a, float b, float c, float d)
 	{
 		x = a;
 		y = b;
@@ -219,6 +219,16 @@ public:
 class Matrix2D
 {
 public:
+	Matrix2D() {};
+	Matrix2D(float a, float b, float c, float d) 
+	{	
+
+		float Mat2D[4] = { a, b, c, d };
+
+	};
+
+
+
 
 
 };
@@ -239,7 +249,7 @@ int main()
 	float Vec2ANorm = Vec2A.Normalize();
 	float Vec2BNorm = Vec2B.Normalize();
 	float Vec2Dot = Vec2A.DotProduct(Vec2B);
-	
+
 
 	Vector3 Vec3A = Vector3(4, 5, 6);
 	Vector3 Vec3B = Vector3(6, 2, 9);
@@ -253,7 +263,7 @@ int main()
 	float Vec3Dot = Vec3A.DotProduct(Vec3B);
 
 
-	
+
 
 
 	system("pause");
