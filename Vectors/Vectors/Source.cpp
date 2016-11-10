@@ -243,9 +243,9 @@ public:
 	Matrix2D Multiply(Matrix2D &other)
 	{
 		Matrix2D Mat = Matrix2D(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[2],
-			m_data[0] * other.m_data[1] + m_data[1] * other.m_data[3],
-			m_data[2] * other.m_data[0] + m_data[3] * other.m_data[2],
-			m_data[2] * other.m_data[1] + m_data[3] * other.m_data[3]);
+								m_data[0] * other.m_data[1] + m_data[1] * other.m_data[3],
+								m_data[2] * other.m_data[0] + m_data[3] * other.m_data[2],
+								m_data[2] * other.m_data[1] + m_data[3] * other.m_data[3]);
 
 		return Mat;
 	}
