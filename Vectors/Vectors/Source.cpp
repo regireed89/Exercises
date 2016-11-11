@@ -243,30 +243,30 @@ public:
 	Matrix2D Multiply(Matrix2D &other)
 	{
 		Matrix2D Mat = Matrix2D(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[2],
-								m_data[0] * other.m_data[1] + m_data[1] * other.m_data[3],
-								m_data[2] * other.m_data[0] + m_data[3] * other.m_data[2],
-								m_data[2] * other.m_data[1] + m_data[3] * other.m_data[3]);
+			m_data[0] * other.m_data[1] + m_data[1] * other.m_data[3],
+			m_data[2] * other.m_data[0] + m_data[3] * other.m_data[2],
+			m_data[2] * other.m_data[1] + m_data[3] * other.m_data[3]);
 
 		return Mat;
 	}
-	
+
 	void PirntStuff()
 	{
 		for (int i = m_data[0]; i < m_data[4]; i++)
 		{
 			cout << m_data[i];
+			i++;
 			if (m_data[i] % 2)
 			{
 				cout << endl;
 			}
 		}
 	}
-
-
-
 };
 int main()
 {
+
+
 	Vector2 Vec2A = Vector2(4, 5);
 	Vector2 Vec2B = Vector2(6, 2);
 	Vector2 Vec2Add = Vec2A.add(Vec2B);
