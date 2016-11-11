@@ -2,10 +2,7 @@
 #include <Math.h>
 #include <cassert>
 #include<stdio.h>
-
-
 using namespace std;
-
 class Vector2
 {
 
@@ -225,7 +222,6 @@ public:
 };
 class Matrix2D
 {
-
 private:
 	int * m_data;
 public:
@@ -238,8 +234,6 @@ public:
 		m_data[2] = c;
 		m_data[3] = d;
 	};
-
-
 	Matrix2D Multiply(Matrix2D &other)
 	{
 		Matrix2D Mat = Matrix2D(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[2],
@@ -250,17 +244,13 @@ public:
 		return Mat;
 	}
 
+
+
 	void PirntStuff()
 	{
-		for (int i = m_data[0]; i < m_data[4]; i++)
-		{
-			cout << m_data[i];
-			i++;
-			if (m_data[i] % 2)
-			{
-				cout << endl;
-			}
-		}
+		cout << "2D Matrix" << endl;
+		cout <<  m_data[0] << " " <<  m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
+		cout << "___" << endl;
 	}
 };
 int main()
@@ -276,7 +266,7 @@ int main()
 	float Vec2BMag = Vec2B.Magnitude();
 	Vector2 Vec2ANorm = Vec2A.Normalize();
 	Vector2 Vec2BNorm = Vec2B.Normalize();
-	float Vec2Dot = Vec2A.DotProduct(Vec2B);
+	float Vec2Dot = Vec2ANorm.DotProduct(Vec2BNorm);
 
 
 	Vector3 Vec3A = Vector3(4, 5, 6);
@@ -309,6 +299,7 @@ int main()
 	Matrix2D MatMult = MatA.Multiply(MatB);
 	MatA.PirntStuff();
 
+	MatB.PirntStuff();
 
 
 	system("pause");
