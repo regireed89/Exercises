@@ -249,7 +249,7 @@ public:
 	void PirntStuff()
 	{
 		cout << "2D Matrix" << endl;
-		cout <<  m_data[0] << " " <<  m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
+		cout << m_data[0] << " " << m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
 		cout << "___" << endl;
 	}
 };
