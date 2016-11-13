@@ -219,8 +219,12 @@ public:
 class Matrix2D
 {
 public:
+	Matrix2D(float a, float b, float c, float d) {
 
-
+		float Mat2D[4] = { a,b,c,d };
+		
+	};
+	
 };
 
 
