@@ -225,7 +225,7 @@ class Matrix2D
 private:
 	int * m_data;
 public:
-<<<<<<< HEAD
+
 	Matrix2D(float a, float b, float c, float d) {
 
 		float Mat2D[4] = { a,b,c,d };
@@ -235,7 +235,6 @@ public:
 };
 
 
-=======
 	Matrix2D() {};
 	Matrix2D(int a, int b, int c, int d)
 	{
@@ -254,8 +253,7 @@ public:
 
 		return Mat;
 	}
->>>>>>> origin/master
-
+	};
 
 
 	void PirntStuff()
