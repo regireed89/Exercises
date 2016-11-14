@@ -229,10 +229,10 @@ public:
 	Matrix2D(float a, float b, float c, float d) {
 
 		float Mat2D[4] = { a,b,c,d };
-		
-	};
-	
-};
+
+	}
+
+
 
 
 	Matrix2D() {};
@@ -253,15 +253,15 @@ public:
 
 		return Mat;
 	}
-	};
 
 
-	void PirntStuff()
-	{
-		cout << "2D Matrix" << endl;
-		cout <<  m_data[0] << " " <<  m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
-		cout << "___" << endl;
-	}
+
+void PirntStuff()
+{
+	cout << "2D Matrix" << endl;
+	cout << m_data[0] << " " << m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
+	cout << "___" << endl;
+}
 };
 int main()
 {
