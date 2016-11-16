@@ -5,12 +5,9 @@
 using namespace std;
 class Vector2
 {
-
-private:
+public:
 
 	float x, y;
-
-public:
 	Vector2() {};
 	Vector2(float a, float b)
 	{
@@ -73,9 +70,10 @@ class Vector3
 
 private:
 
-	float x, y, z;
+	
 
 public:
+	float x, y, z;
 	Vector3() {};
 	Vector3(float a, float b, float c)
 	{
@@ -152,8 +150,9 @@ public:
 class Vector4
 {
 private:
-	float x, y, z, w;
+	
 public:
+	float x, y, z, w;
 	Vector4(float a, float b, float c, float d)
 	{
 		x = a;
@@ -220,23 +219,14 @@ public:
 
 
 };
-class Matrix2D
+class Matrix2
 {
 private:
 	int * m_data;
 public:
 
-	Matrix2D(float a, float b, float c, float d) {
-
-		float Mat2D[4] = { a,b,c,d };
-
-	}
-
-
-
-
-	Matrix2D() {};
-	Matrix2D(int a, int b, int c, int d)
+	Matrix2() {};
+	Matrix2(int a, int b, int c, int d)
 	{
 		m_data = new int[4];
 		m_data[0] = a;
@@ -244,33 +234,69 @@ public:
 		m_data[2] = c;
 		m_data[3] = d;
 	};
-	Matrix2D Multiply(Matrix2D &other)
+	Matrix2 Multiply(Matrix2 &other)
 	{
-		Matrix2D Mat = Matrix2D(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[2],
+		Matrix2 Mat = Matrix2(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[2],
 			m_data[0] * other.m_data[1] + m_data[1] * other.m_data[3],
 			m_data[2] * other.m_data[0] + m_data[3] * other.m_data[2],
 			m_data[2] * other.m_data[1] + m_data[3] * other.m_data[3]);
 
 		return Mat;
 	}
+	Vector2 VecxMat(const Vector2 &vec)
+	{
+		float a = m_data[0] * vec.x + m_data[1] * vec.y;
+		float b = m_data[2] * vec.x + m_data[3] * vec.y;
+
+		return Vector2(a, b);
+	}
 
 
 
-<<<<<<< HEAD
 	void PirntStuff()
 	{
 		cout << "2D Matrix" << endl;
 		cout << m_data[0] << " " << m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
 		cout << "___" << endl;
 	}
-=======
-void PirntStuff()
+
+};
+class Matrix3
 {
-	cout << "2D Matrix" << endl;
-	cout << m_data[0] << " " << m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
-	cout << "___" << endl;
-}
->>>>>>> origin/master
+private:
+	int*m_data;
+public:
+	Matrix3() {};
+	Matrix3(int a, int b, int c, int d, int e, int f, int g, int h, int i)
+	{
+		m_data = new int[9];
+		m_data[0] = a;
+		m_data[1] = b;
+		m_data[2] = c;
+		m_data[3] = d;
+		m_data[4] = e;
+		m_data[5] = f;
+		m_data[6] = g;
+		m_data[7] = h;
+		m_data[8] = i;
+	}
+	Matrix3 Multiply(Matrix3 &other)
+	{
+		Matrix3 Mat = Matrix3(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[3] + m_data[2] * other.m_data[6],
+			m_data[0] * other.m_data[1] + m_data[1] * other.m_data[4] + m_data[2] * other.m_data[7],
+			m_data[0] * other.m_data[2] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[8],
+			m_data[3] * other.m_data[0] + m_data[4] * other.m_data[3] + m_data[5] * other.m_data[6],
+			m_data[3] * other.m_data[1] + m_data[4] * other.m_data[4] + m_data[5] * other.m_data[7],
+			m_data[3] * other.m_data[2] + m_data[4] * other.m_data[5] + m_data[5] * other.m_data[8],
+			m_data[6] * other.m_data[0] + m_data[7] * other.m_data[3] + m_data[8] * other.m_data[6],
+			m_data[6] * other.m_data[1] + m_data[7] * other.m_data[4] + m_data[8] * other.m_data[7],
+			m_data[6] * other.m_data[2] + m_data[7] * other.m_data[5] + m_data[8] * other.m_data[8]);
+
+		return Mat;
+	}
+
+
+
 };
 int main()
 {
@@ -313,12 +339,26 @@ int main()
 	float Vec4Dot = Vec4ANorm.DotProduct(Vec4BNorm);
 
 
-	Matrix2D MatA = Matrix2D(1, 0, 1, 0);
-	Matrix2D MatB = Matrix2D(1, 2, 3, 4);
-	Matrix2D MatMult = MatA.Multiply(MatB);
-	MatA.PirntStuff();
+	Matrix2 MatA2 = Matrix2(4, 3, 2, 1);
+	Matrix2 MatB2 = Matrix2(1, 2, 3, 4);
+	Vector2 Vec2 = Vector2(8, 5);
+	Matrix2 Mat2Mult = MatA2.Multiply(MatB2);
+	Vector2 VecxMat = MatA2.VecxMat(Vec2);
+	cout << "first matrix" << endl;
+	MatA2.PirntStuff();
+	cout << "second matrix" << endl;
+	MatB2.PirntStuff();
+	cout << "multiplying the two above matricies together" << endl;
+	Mat2Mult.PirntStuff();
 
-	MatB.PirntStuff();
+
+	Matrix3 MatA3 = Matrix3(1, 2, 3, 4, 5, 6, 7, 8, 9);
+	Matrix3 MatB3 = Matrix3(9, 8, 7, 6, 5, 4, 3, 2, 1);
+	Vector3 Vec3 = Vector3(3, 7, 0);
+	Matrix3 Mat3Mult = MatA3.Multiply(MatB3);
+
+
+	
 
 
 	system("pause");
