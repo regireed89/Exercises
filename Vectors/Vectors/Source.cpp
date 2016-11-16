@@ -225,6 +225,16 @@ class Matrix2D
 private:
 	int * m_data;
 public:
+
+	Matrix2D(float a, float b, float c, float d) {
+
+		float Mat2D[4] = { a,b,c,d };
+
+	}
+
+
+
+
 	Matrix2D() {};
 	Matrix2D(int a, int b, int c, int d)
 	{
@@ -246,12 +256,21 @@ public:
 
 
 
+<<<<<<< HEAD
 	void PirntStuff()
 	{
 		cout << "2D Matrix" << endl;
 		cout << m_data[0] << " " << m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
 		cout << "___" << endl;
 	}
+=======
+void PirntStuff()
+{
+	cout << "2D Matrix" << endl;
+	cout << m_data[0] << " " << m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
+	cout << "___" << endl;
+}
+>>>>>>> origin/master
 };
 int main()
 {
