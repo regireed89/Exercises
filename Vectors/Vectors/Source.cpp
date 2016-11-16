@@ -243,7 +243,7 @@ public:
 
 		return Mat;
 	}
-	Vector2 VecxMat(const Vector2 &vec)
+	Vector2 Vec2xMat2(const Vector2 &vec)
 	{
 		float a = m_data[0] * vec.x + m_data[1] * vec.y;
 		float b = m_data[2] * vec.x + m_data[3] * vec.y;
