@@ -527,6 +527,18 @@ int main()
 	cout << "multiplying the two above 3d matricies together" << endl;
 	Mat3Mult.PrintMatrix3();
 
+
+	Matrix4 MatA4 = Matrix4(7, 8, 4, 8, 9, 4, 7, 6, 2, 3, 6, 5, 2, 8, 0, 4);
+	Matrix4 MatB4 = Matrix4(16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1);
+	Vector4 Vec4 = Vector4(3, 7, 0, 5);
+	Matrix4 Mat4Mult = MatA4.Multiply(MatB4);
+	Vector4 Vec4xMat = MatA4.Vec4xMat4(Vec4);
+	cout << "first 4d matrix" << endl;
+	MatA4.PrintMatrix4();
+	cout << "second 4d matrix" << endl;
+	MatB4.PrintMatrix4();
+	cout << "multiplying the two above 4d matricies together" << endl;
+	Mat4Mult.PrintMatrix4();
 	system("pause");
 	return 0;
 
