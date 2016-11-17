@@ -321,6 +321,8 @@ public:
 		return Vector3(a, b, c);
 
 	}
+
+
 	void PrintMatrix3()
 	{
 
