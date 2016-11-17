@@ -295,6 +295,31 @@ public:
 		return Mat;
 	}
 
+	Vector3 Vec3xMat3(const Vector3 &vec)
+	{
+		float a = m_data[0] * vec.x + m_data[1] * vec.y + m_data[2] * vec.z;
+		float b = m_data[3] * vec.x + m_data[4] * vec.y + m_data[5] * vec.z;
+		float c = m_data[]
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 };
@@ -343,7 +368,7 @@ int main()
 	Matrix2 MatB2 = Matrix2(1, 2, 3, 4);
 	Vector2 Vec2 = Vector2(8, 5);
 	Matrix2 Mat2Mult = MatA2.Multiply(MatB2);
-	Vector2 VecxMat = MatA2.VecxMat(Vec2);
+	Vector2 VecxMat = MatA2.Vec2xMat2(Vec2);
 	cout << "first matrix" << endl;
 	MatA2.PirntStuff();
 	cout << "second matrix" << endl;
