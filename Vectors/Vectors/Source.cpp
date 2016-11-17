@@ -408,6 +408,7 @@ int main()
 	Vector2 Vec2ANorm = Vec2A.Normalize();
 	Vector2 Vec2BNorm = Vec2B.Normalize();
 	float Vec2Dot = Vec2ANorm.DotProduct(Vec2BNorm);
+	cout << "||||||||||||||||||||||||||||||||||||||||" << endl;
 	cout << "2D Vectors" << endl;
 	cout << "first 2d vector" << endl;
 	Vec2A.Print();
@@ -507,6 +508,8 @@ int main()
 	Vector2 Vec2 = Vector2(8, 5);
 	Matrix2 Mat2Mult = MatA2.Multiply(MatB2);
 	Vector2 VecxMat = MatA2.Vec2xMat2(Vec2);
+	cout << "||||||||||||||||||||||||||||||||||||||||" << endl;
+	cout << "2D Matrix" << endl;
 	cout << "first 2d matrix" << endl;
 	MatA2.PirntMatrix2();
 	cout << "second 2d matrix" << endl;
@@ -520,6 +523,8 @@ int main()
 	Vector3 Vec3 = Vector3(3, 7, 0);
 	Matrix3 Mat3Mult = MatA3.Multiply(MatB3);
 	Vector3 Vec3xMat = MatA3.Vec3xMat3(Vec3);
+	cout << "||||||||||||||||||||||||||||||||||||||||" << endl;
+	cout << "3D Matrix" << endl;
 	cout << "first 3d matrix" << endl;
 	MatA3.PrintMatrix3();
 	cout << "second 3d matrix" << endl;
@@ -533,6 +538,9 @@ int main()
 	Vector4 Vec4 = Vector4(3, 7, 0, 5);
 	Matrix4 Mat4Mult = MatA4.Multiply(MatB4);
 	Vector4 Vec4xMat = MatA4.Vec4xMat4(Vec4);
+
+	cout << "||||||||||||||||||||||||||||||||||||||||" << endl;
+	cout << "4D Matrix" << endl;
 	cout << "first 4d matrix" << endl;
 	MatA4.PrintMatrix4();
 	cout << "second 4d matrix" << endl;
