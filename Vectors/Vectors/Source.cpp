@@ -325,20 +325,79 @@ public:
 
 	void PrintMatrix3()
 	{
-
-
 		cout << "3D Matrix" << endl;
 		cout << m_data[0] << " " << m_data[1] << " " << m_data[2] << "\n" << m_data[3] << " " << m_data[4] << " " << m_data[5] << "\n" << m_data[6] << " " << m_data[7] << " " << m_data[8] << endl;
 		cout << "______" << endl;
+	}
+};
+class Matrix4
+{
+private:
+	int* m_data;
+public:
+	Matrix4() {};
+	Matrix4(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p)
+	{
+		m_data = new int[16];
+		m_data[0] = a;
+		m_data[1] = b;
+		m_data[2] = c;
+		m_data[3] = d;
+		m_data[4] = e;
+		m_data[5] = f;
+		m_data[6] = g;
+		m_data[7] = h;
+		m_data[8] = i;
+		m_data[9] = j;
+		m_data[10] = k;
+		m_data[11] = l;
+		m_data[12] = m;
+		m_data[13] = n;
+		m_data[14] = o;
+		m_data[15] = p;
+	}
+
+	Matrix4 Multiply(Matrix4 &other)
+	{
+		Matrix4 Mat = Matrix4(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[4] + m_data[2] * other.m_data[8] + m_data[3] * other.m_data[12],
+							  m_data[0] * other.m_data[1] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[9] + m_data[3] * other.m_data[13],
+							  m_data[0] * other.m_data[2] + m_data[1] * other.m_data[6] + m_data[2] * other.m_data[10] + m_data[3] * other.m_data[14],
+							  m_data[0] * other.m_data[3] + m_data[1] * other.m_data[7] + m_data[2] * other.m_data[11] + m_data[3] * other.m_data[15],
+							  m_data[4] * other.m_data[0] + m_data[5] * other.m_data[4] + m_data[6] * other.m_data[8] + m_data[7] * other.m_data[12],
+							  m_data[4] * other.m_data[1] + m_data[5] * other.m_data[5] + m_data[6] * other.m_data[9] + m_data[7] * other.m_data[13],
+							  m_data[4] * other.m_data[2] + m_data[5] * other.m_data[6] + m_data[6] * other.m_data[10] + m_data[7] * other.m_data[14],
+							  m_data[4] * other.m_data[3] + m_data[5] * other.m_data[7] + m_data[6] * other.m_data[11] + m_data[7] * other.m_data[15],
+							  m_data[8] * other.m_data[0] + m_data[9] * other.m_data[4] + m_data[10] * other.m_data[8] + m_data[11] * other.m_data[12],
+							  m_data[8] * other.m_data[1] + m_data[9] * other.m_data[5] + m_data[10] * other.m_data[9] + m_data[11] * other.m_data[13],
+							  m_data[8] * other.m_data[2] + m_data[9] * other.m_data[6] + m_data[10] * other.m_data[10] + m_data[11] * other.m_data[14],
+							  m_data[8] * other.m_data[3] + m_data[9] * other.m_data[7] + m_data[10] * other.m_data[11] + m_data[11] * other.m_data[15],
+							  m_data[12] * other.m_data[0] + m_data[13] * other.m_data[4] + m_data[14] * other.m_data[8] + m_data[15] * other.m_data[12],
+							  m_data[12] * other.m_data[1] + m_data[13] * other.m_data[5] + m_data[14] * other.m_data[9] + m_data[15] * other.m_data[13],
+							  m_data[12] * other.m_data[2] + m_data[13] * other.m_data[6] + m_data[14] * other.m_data[10] + m_data[15] * other.m_data[14],
+							  m_data[12] * other.m_data[3] + m_data[13] * other.m_data[7] + m_data[14] * other.m_data[11] + m_data[15] * other.m_data[15]);
+
+		return Mat;
+	}
+
+	Vector4 Vec4xMat4(const Vector4 &vec)
+	{
+		float a = m_data[0] * vec.x + m_data[1] * vec.y + m_data[2] * vec.z + m_data[3] * vec.w;
+		float b = m_data[4] * vec.x + m_data[5] * vec.y + m_data[6] * vec.z + m_data[6] * vec.w;
+		float c = m_data[8] * vec.x + m_data[9] * vec.y + m_data[10] * vec.z + m_data[11] * vec.w;
+		float d = m_data[12] * vec.x + m_data[13] * vec.y + m_data[14] * vec.z + m_data[15] * vec.w;
+		return Vector4(a, b, c, d);
 
 	}
 
-
+	void PrintMatrix4()
+	{
+		cout << "4D Matrix" << endl;
+		cout << m_data[0] << " " << m_data[1] << " " << m_data[2] << " " << m_data[3] << "\n" << m_data[4] << " " << m_data[5] << "" << m_data[6] << " " << m_data[7] << "\n" << m_data[8] << " " << m_data[9] << " " << m_data[10] << " " << m_data[11] << "\n" << m_data[12] << " " << m_data[13] << " " << m_data[14] << " " << m_data[15] << endl;
+		cout << "___________" << endl;
+	}
 };
 int main()
 {
-
-
 	Vector2 Vec2A = Vector2(4, 5);
 	Vector2 Vec2B = Vector2(6, 2);
 	Vector2 Vec2Add = Vec2A.add(Vec2B);
