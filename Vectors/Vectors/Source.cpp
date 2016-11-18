@@ -251,6 +251,8 @@ public:
 		m_data[2] = c;
 		m_data[3] = d;
 	};
+
+
 	Matrix2 Multiply(Matrix2 &other)
 	{
 		Matrix2 Mat = Matrix2(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[2],
@@ -260,6 +262,8 @@ public:
 
 		return Mat;
 	}
+
+
 	Vector2 Vec2xMat2(const Vector2 &vec)
 	{
 		float a = m_data[0] * vec.x + m_data[1] * vec.y;
@@ -269,13 +273,13 @@ public:
 	}
 
 
-
 	void PirntMatrix2()
 	{
 		cout << "2D Matrix" << endl;
 		cout << m_data[0] << " " << m_data[1] << "\n" << m_data[2] << " " << m_data[3] << endl;
 		cout << "___" << endl;
 	}
+
 
 };
 class Matrix3
@@ -297,38 +301,85 @@ public:
 		m_data[7] = h;
 		m_data[8] = i;
 	}
+
+
 	Matrix3 Multiply(Matrix3 &other)
 	{
 		Matrix3 Mat = Matrix3(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[3] + m_data[2] * other.m_data[6],
-			m_data[0] * other.m_data[1] + m_data[1] * other.m_data[4] + m_data[2] * other.m_data[7],
-			m_data[0] * other.m_data[2] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[8],
-			m_data[3] * other.m_data[0] + m_data[4] * other.m_data[3] + m_data[5] * other.m_data[6],
-			m_data[3] * other.m_data[1] + m_data[4] * other.m_data[4] + m_data[5] * other.m_data[7],
-			m_data[3] * other.m_data[2] + m_data[4] * other.m_data[5] + m_data[5] * other.m_data[8],
-			m_data[6] * other.m_data[0] + m_data[7] * other.m_data[3] + m_data[8] * other.m_data[6],
-			m_data[6] * other.m_data[1] + m_data[7] * other.m_data[4] + m_data[8] * other.m_data[7],
-			m_data[6] * other.m_data[2] + m_data[7] * other.m_data[5] + m_data[8] * other.m_data[8]);
+							  m_data[0] * other.m_data[1] + m_data[1] * other.m_data[4] + m_data[2] * other.m_data[7],
+							  m_data[0] * other.m_data[2] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[8],
+							  m_data[3] * other.m_data[0] + m_data[4] * other.m_data[3] + m_data[5] * other.m_data[6],
+							  m_data[3] * other.m_data[1] + m_data[4] * other.m_data[4] + m_data[5] * other.m_data[7],
+							  m_data[3] * other.m_data[2] + m_data[4] * other.m_data[5] + m_data[5] * other.m_data[8],
+							  m_data[6] * other.m_data[0] + m_data[7] * other.m_data[3] + m_data[8] * other.m_data[6],
+							  m_data[6] * other.m_data[1] + m_data[7] * other.m_data[4] + m_data[8] * other.m_data[7],
+							  m_data[6] * other.m_data[2] + m_data[7] * other.m_data[5] + m_data[8] * other.m_data[8]);
 
 		return Mat;
 	}
+
 
 	Vector3 Vec3xMat3(const Vector3 &vec)
 	{
 		float a = m_data[0] * vec.x + m_data[1] * vec.y + m_data[2] * vec.z;
 		float b = m_data[3] * vec.x + m_data[4] * vec.y + m_data[5] * vec.z;
 		float c = m_data[6] * vec.x + m_data[7] * vec.y + m_data[8] * vec.z;
-
+		
 		return Vector3(a, b, c);
-
 	}
 
+	Matrix3 setRotateX(float a)
+	{
+		Matrix3 Mat = Matrix3(m_data[0] * 1 + m_data[1] * 0 + m_data[2] * 0,
+							  m_data[0] * 0 + m_data[1] * cos(a) + m_data[2] * sin(a),
+							  m_data[0] * 0 + m_data[1] * -sin(a)+ m_data[2] * cos(a),
+							  m_data[3] * 1 + m_data[4] * 0 + m_data[5] * 0,
+							  m_data[3] * 0 + m_data[4] * cos(a)+ m_data[5] * sin(a),
+							  m_data[3] * 0 + m_data[4] * -sin(a)+ m_data[5] * cos(a),
+							  m_data[6] * 1 + m_data[7] * 0 + m_data[8] * 0,
+							  m_data[6] * 0 + m_data[7] * cos(a)+ m_data[8] * sin(a),
+							  m_data[6] * 0 + m_data[7] * -sin(a)+ m_data[8] * cos(a));
 
+		return Mat;
+	}
+
+	Matrix3 setRotateY(float a)
+	{
+		Matrix3 Mat = Matrix3(m_data[0] * cos(a) + m_data[1] * 0 + m_data[2] * -sin(a),
+							  m_data[0] * 0 + m_data[1] * 1 + m_data[2] * 0,
+							  m_data[0] * sin(a) + m_data[1] * 0 + m_data[2] * cos(a),
+							  m_data[3] * cos(a) + m_data[4] * 0 + m_data[5] * -sin(a),
+							  m_data[3] * 0 + m_data[4] * 1 + m_data[5] * 0,
+							  m_data[3] * sin(a) + m_data[4] * 1 + m_data[5] * cos(a),
+							  m_data[6] * cos(a) + m_data[7] * 0 + m_data[8] * -sin(a),
+							  m_data[6] * 0 + m_data[7] * 1 + m_data[8] * 0,
+							  m_data[6] * sin(a) + m_data[7] * 0 + m_data[8] * cos(a));
+
+		return Mat;
+	}
+
+	Matrix3 setRotateZ(float a)
+	{
+		Matrix3 Mat = Matrix3(m_data[0] * cos(a) + m_data[1] * -sin(a) + m_data[2] * 0,
+							  m_data[0] * sin(a) + m_data[1] * cos(a) + m_data[2] * 0,
+							  m_data[0] * 0 + m_data[1] * 0 + m_data[2] * 1,
+							  m_data[3] * cos(a) + m_data[4] * -sin(a) + m_data[5] * 0,
+							  m_data[3] * sin(a) + m_data[4] * cos(a) + m_data[5] * 0,
+							  m_data[3] * 0 + m_data[4] * 0 + m_data[5] * 1,
+							  m_data[6] * cos(a) + m_data[7] * -sin(a) + m_data[8] * 0,
+							  m_data[6] * sin(a) + m_data[7] * cos(a) + m_data[8] * 0,
+							  m_data[6] * 0 + m_data[7] * 0 + m_data[8] * 1);
+
+		return Mat;
+	}
 	void PrintMatrix3()
 	{
 		cout << "3D Matrix" << endl;
 		cout << m_data[0] << " " << m_data[1] << " " << m_data[2] << "\n" << m_data[3] << " " << m_data[4] << " " << m_data[5] << "\n" << m_data[6] << " " << m_data[7] << " " << m_data[8] << endl;
 		cout << "______" << endl;
 	}
+
+
 };
 class Matrix4
 {
@@ -357,6 +408,7 @@ public:
 		m_data[15] = p;
 	}
 
+
 	Matrix4 Multiply(Matrix4 &other)
 	{
 		Matrix4 Mat = Matrix4(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[4] + m_data[2] * other.m_data[8] + m_data[3] * other.m_data[12],
@@ -379,6 +431,7 @@ public:
 		return Mat;
 	}
 
+
 	Vector4 Vec4xMat4(const Vector4 &vec)
 	{
 		float a = m_data[0] * vec.x + m_data[1] * vec.y + m_data[2] * vec.z + m_data[3] * vec.w;
@@ -389,19 +442,22 @@ public:
 
 	}
 
+
 	void PrintMatrix4()
 	{
 		cout << "4D Matrix" << endl;
-		cout << m_data[0] << " " << m_data[1] << " " << m_data[2] << " " << m_data[3] << "\n" << m_data[4] << " " << m_data[5] << "" << m_data[6] << " " << m_data[7] << "\n" << m_data[8] << " " << m_data[9] << " " << m_data[10] << " " << m_data[11] << "\n" << m_data[12] << " " << m_data[13] << " " << m_data[14] << " " << m_data[15] << endl;
+		cout << m_data[0] << " " << m_data[1] << " " << m_data[2] << " " << m_data[3] << "\n" << m_data[4] << " " << m_data[5] << " " << m_data[6] << " " << m_data[7] << "\n" << m_data[8] << " " << m_data[9] << " " << m_data[10] << " " << m_data[11] << "\n" << m_data[12] << " " << m_data[13] << " " << m_data[14] << " " << m_data[15] << endl;
 		cout << "___________" << endl;
 	}
+
+
 };
 int main()
 {
 	Vector2 Vec2A = Vector2(4, 5);
 	Vector2 Vec2B = Vector2(6, 2);
 	Vector2 Vec2Add = Vec2A.add(Vec2B);
-	Vector2 Vec2Sub = Vec2A.subtract(Vec2B);
+    Vector2 Vec2Sub = Vec2A.subtract(Vec2B);
 	Vector2 Vec2Mult = Vec2A.ScalarMult(Vec2B);
 	float Vec2AMag = Vec2A.Magnitude();
 	float Vec2BMag = Vec2B.Magnitude();
@@ -468,6 +524,7 @@ int main()
 	cout << "the cross product of both vectors" << endl;
 	Vec3Cross.Print();
 
+
 	Vector4 Vec4A = Vector4(4, 5, 6, 7);
 	Vector4 Vec4B = Vector4(6, 2, 9, 3);
 	Vector4 Vec4Add = Vec4A.add(Vec4B);
@@ -502,7 +559,6 @@ int main()
 	cout << Vec4Dot << endl;
 	
 
-
 	Matrix2 MatA2 = Matrix2(4, 3, 2, 1);
 	Matrix2 MatB2 = Matrix2(1, 2, 3, 4);
 	Vector2 Vec2 = Vector2(8, 5);
@@ -518,7 +574,7 @@ int main()
 	Mat2Mult.PirntMatrix2();
 
 
-	Matrix3 MatA3 = Matrix3(7, 8, 4, 8, 9, 4, 7, 6, 2);
+	Matrix3 MatA3 = Matrix3(1,0,0,0,1,0,0,0,1);
 	Matrix3 MatB3 = Matrix3(9, 8, 7, 6, 5, 4, 3, 2, 1);
 	Vector3 Vec3 = Vector3(3, 7, 0);
 	Matrix3 Mat3Mult = MatA3.Multiply(MatB3);
@@ -531,6 +587,8 @@ int main()
 	MatB3.PrintMatrix3();
 	cout << "multiplying the two above 3d matricies together" << endl;
 	Mat3Mult.PrintMatrix3();
+	Matrix3 ya = MatA3.setRotateY(90);
+	ya.PrintMatrix3();
 
 
 	Matrix4 MatA4 = Matrix4(7, 8, 4, 8, 9, 4, 7, 6, 2, 3, 6, 5, 2, 8, 0, 4);
@@ -538,7 +596,6 @@ int main()
 	Vector4 Vec4 = Vector4(3, 7, 0, 5);
 	Matrix4 Mat4Mult = MatA4.Multiply(MatB4);
 	Vector4 Vec4xMat = MatA4.Vec4xMat4(Vec4);
-
 	cout << "||||||||||||||||||||||||||||||||||||||||" << endl;
 	cout << "4D Matrix" << endl;
 	cout << "first 4d matrix" << endl;
