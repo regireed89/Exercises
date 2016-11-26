@@ -322,6 +322,15 @@ public:
 
 	}
 
+	Matrix3 RotateSetX(float a)
+	{
+		Matrix3 MAT = Matrix3(m_data[0] * 1, m_data[1] * 0, m_data[2] * 0,
+			m_data[3] * 0, m_data[4] * cos(a), m_data[5] * -sin(a),
+			m_data[6] * 0, m_data[7] * sin(a), m_data[8] * cos(a));
+
+		return MAT;
+	}
+
 
 	void PrintMatrix3()
 	{
@@ -360,21 +369,21 @@ public:
 	Matrix4 Multiply(Matrix4 &other)
 	{
 		Matrix4 Mat = Matrix4(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[4] + m_data[2] * other.m_data[8] + m_data[3] * other.m_data[12],
-							  m_data[0] * other.m_data[1] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[9] + m_data[3] * other.m_data[13],
-							  m_data[0] * other.m_data[2] + m_data[1] * other.m_data[6] + m_data[2] * other.m_data[10] + m_data[3] * other.m_data[14],
-							  m_data[0] * other.m_data[3] + m_data[1] * other.m_data[7] + m_data[2] * other.m_data[11] + m_data[3] * other.m_data[15],
-							  m_data[4] * other.m_data[0] + m_data[5] * other.m_data[4] + m_data[6] * other.m_data[8] + m_data[7] * other.m_data[12],
-							  m_data[4] * other.m_data[1] + m_data[5] * other.m_data[5] + m_data[6] * other.m_data[9] + m_data[7] * other.m_data[13],
-							  m_data[4] * other.m_data[2] + m_data[5] * other.m_data[6] + m_data[6] * other.m_data[10] + m_data[7] * other.m_data[14],
-							  m_data[4] * other.m_data[3] + m_data[5] * other.m_data[7] + m_data[6] * other.m_data[11] + m_data[7] * other.m_data[15],
-							  m_data[8] * other.m_data[0] + m_data[9] * other.m_data[4] + m_data[10] * other.m_data[8] + m_data[11] * other.m_data[12],
-							  m_data[8] * other.m_data[1] + m_data[9] * other.m_data[5] + m_data[10] * other.m_data[9] + m_data[11] * other.m_data[13],
-							  m_data[8] * other.m_data[2] + m_data[9] * other.m_data[6] + m_data[10] * other.m_data[10] + m_data[11] * other.m_data[14],
-							  m_data[8] * other.m_data[3] + m_data[9] * other.m_data[7] + m_data[10] * other.m_data[11] + m_data[11] * other.m_data[15],
-							  m_data[12] * other.m_data[0] + m_data[13] * other.m_data[4] + m_data[14] * other.m_data[8] + m_data[15] * other.m_data[12],
-							  m_data[12] * other.m_data[1] + m_data[13] * other.m_data[5] + m_data[14] * other.m_data[9] + m_data[15] * other.m_data[13],
-							  m_data[12] * other.m_data[2] + m_data[13] * other.m_data[6] + m_data[14] * other.m_data[10] + m_data[15] * other.m_data[14],
-							  m_data[12] * other.m_data[3] + m_data[13] * other.m_data[7] + m_data[14] * other.m_data[11] + m_data[15] * other.m_data[15]);
+			m_data[0] * other.m_data[1] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[9] + m_data[3] * other.m_data[13],
+			m_data[0] * other.m_data[2] + m_data[1] * other.m_data[6] + m_data[2] * other.m_data[10] + m_data[3] * other.m_data[14],
+			m_data[0] * other.m_data[3] + m_data[1] * other.m_data[7] + m_data[2] * other.m_data[11] + m_data[3] * other.m_data[15],
+			m_data[4] * other.m_data[0] + m_data[5] * other.m_data[4] + m_data[6] * other.m_data[8] + m_data[7] * other.m_data[12],
+			m_data[4] * other.m_data[1] + m_data[5] * other.m_data[5] + m_data[6] * other.m_data[9] + m_data[7] * other.m_data[13],
+			m_data[4] * other.m_data[2] + m_data[5] * other.m_data[6] + m_data[6] * other.m_data[10] + m_data[7] * other.m_data[14],
+			m_data[4] * other.m_data[3] + m_data[5] * other.m_data[7] + m_data[6] * other.m_data[11] + m_data[7] * other.m_data[15],
+			m_data[8] * other.m_data[0] + m_data[9] * other.m_data[4] + m_data[10] * other.m_data[8] + m_data[11] * other.m_data[12],
+			m_data[8] * other.m_data[1] + m_data[9] * other.m_data[5] + m_data[10] * other.m_data[9] + m_data[11] * other.m_data[13],
+			m_data[8] * other.m_data[2] + m_data[9] * other.m_data[6] + m_data[10] * other.m_data[10] + m_data[11] * other.m_data[14],
+			m_data[8] * other.m_data[3] + m_data[9] * other.m_data[7] + m_data[10] * other.m_data[11] + m_data[11] * other.m_data[15],
+			m_data[12] * other.m_data[0] + m_data[13] * other.m_data[4] + m_data[14] * other.m_data[8] + m_data[15] * other.m_data[12],
+			m_data[12] * other.m_data[1] + m_data[13] * other.m_data[5] + m_data[14] * other.m_data[9] + m_data[15] * other.m_data[13],
+			m_data[12] * other.m_data[2] + m_data[13] * other.m_data[6] + m_data[14] * other.m_data[10] + m_data[15] * other.m_data[14],
+			m_data[12] * other.m_data[3] + m_data[13] * other.m_data[7] + m_data[14] * other.m_data[11] + m_data[15] * other.m_data[15]);
 
 		return Mat;
 	}
@@ -500,7 +509,7 @@ int main()
 	Vec4BNorm.Print();
 	cout << "the dot product of both vectors" << endl;
 	cout << Vec4Dot << endl;
-	
+
 
 
 	Matrix2 MatA2 = Matrix2(4, 3, 2, 1);
@@ -518,7 +527,7 @@ int main()
 	Mat2Mult.PirntMatrix2();
 
 
-	Matrix3 MatA3 = Matrix3(7, 8, 4, 8, 9, 4, 7, 6, 2);
+	Matrix3 MatA3 = Matrix3(1,0,0,0,1,0,0,0,1);
 	Matrix3 MatB3 = Matrix3(9, 8, 7, 6, 5, 4, 3, 2, 1);
 	Vector3 Vec3 = Vector3(3, 7, 0);
 	Matrix3 Mat3Mult = MatA3.Multiply(MatB3);
@@ -531,6 +540,8 @@ int main()
 	MatB3.PrintMatrix3();
 	cout << "multiplying the two above 3d matricies together" << endl;
 	Mat3Mult.PrintMatrix3();
+	Matrix3 kisn = MatA3.RotateSetX(90);
+	kisn.PrintMatrix3();
 
 
 	Matrix4 MatA4 = Matrix4(7, 8, 4, 8, 9, 4, 7, 6, 2, 3, 6, 5, 2, 8, 0, 4);
