@@ -8,8 +8,8 @@ class Vector2
 public:
 
 	float x, y;
-	Vector2() {};
-	Vector2(float a, float b)
+	Vector2() {};//default constructor
+	Vector2(float a, float b)//constuctor takes two float arguments
 	{
 		x = a;
 		y = b;
@@ -81,8 +81,8 @@ private:
 
 public:
 	float x, y, z;
-	Vector3() {};
-	Vector3(float a, float b, float c)
+	Vector3() {};//default constructor
+	Vector3(float a, float b, float c)//constructor takes three float arguments
 	{
 		x = a;
 		y = b;
