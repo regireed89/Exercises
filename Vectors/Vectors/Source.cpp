@@ -15,7 +15,7 @@ public:
 		y = b;
 	}
 
-	Vector2 add(Vector2 &other)
+	Vector2 add(Vector2 &other)//function to add two vectors together
 	{
 
 		float a = this->x + other.x;
@@ -24,7 +24,7 @@ public:
 		return Vector2(a, b);
 	}
 
-	Vector2 subtract(Vector2 &other)
+	Vector2 subtract(Vector2 &other)//function to subtract one vector from another
 	{
 		float a = this->x - other.x;
 		float b = this->y - other.y;
@@ -32,7 +32,7 @@ public:
 		return Vector2(a, b);
 	}
 
-	Vector2 ScalarMult(Vector2 &mult)
+	Vector2 ScalarMult(Vector2 &mult)//function to multiply 2d vectors
 	{
 		float a = this->x * mult.x;
 		float b = this->y * mult.y;
@@ -40,7 +40,7 @@ public:
 		return Vector2(a, b);
 	}
 
-	float Magnitude()
+	float Magnitude()//function to find the magnitude of a 2d vector
 	{
 		float a = sqrt(x*x + y*y);
 
@@ -48,14 +48,14 @@ public:
 		return a;
 	}
 
-	Vector2 Normalize()
+	Vector2 Normalize()//function to normalize a vector
 	{
 		Vector2 vec = Vector2(x / Magnitude(), y / Magnitude());
 
 		return vec;
 	}
 
-	float DotProduct(Vector2 &other)
+	float DotProduct(Vector2 &other)//function to find the dotproduct of two 2d vectors
 	{
 		float a = this->x * other.x;
 		float b = this->y * other.y;
@@ -64,7 +64,7 @@ public:
 		return c;
 	}
 
-	void Print()
+	void Print()//prints out the vector
 	{
 		cout << "2D Vector" << endl;
 		cout << "x=" << x << "y=" << y << endl;
