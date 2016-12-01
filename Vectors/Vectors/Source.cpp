@@ -328,49 +328,8 @@ public:
 		return Vector3(a, b, c);
 	}
 
-	Matrix3 setRotateX(float a)
-	{
-		Matrix3 Mat = Matrix3(m_data[0] * 1 + m_data[1] * 0 + m_data[2] * 0,
-							  m_data[0] * 0 + m_data[1] * cos(a) + m_data[2] * sin(a),
-							  m_data[0] * 0 + m_data[1] * -sin(a)+ m_data[2] * cos(a),
-							  m_data[3] * 1 + m_data[4] * 0 + m_data[5] * 0,
-							  m_data[3] * 0 + m_data[4] * cos(a)+ m_data[5] * sin(a),
-							  m_data[3] * 0 + m_data[4] * -sin(a)+ m_data[5] * cos(a),
-							  m_data[6] * 1 + m_data[7] * 0 + m_data[8] * 0,
-							  m_data[6] * 0 + m_data[7] * cos(a)+ m_data[8] * sin(a),
-							  m_data[6] * 0 + m_data[7] * -sin(a)+ m_data[8] * cos(a));
+	
 
-		return Mat;
-	}
-
-	Matrix3 setRotateY(float a)
-	{
-		Matrix3 Mat = Matrix3(m_data[0] * cos(a) + m_data[1] * 0 + m_data[2] * -sin(a),
-							  m_data[0] * 0 + m_data[1] * 1 + m_data[2] * 0,
-							  m_data[0] * sin(a) + m_data[1] * 0 + m_data[2] * cos(a),
-							  m_data[3] * cos(a) + m_data[4] * 0 + m_data[5] * -sin(a),
-							  m_data[3] * 0 + m_data[4] * 1 + m_data[5] * 0,
-							  m_data[3] * sin(a) + m_data[4] * 1 + m_data[5] * cos(a),
-							  m_data[6] * cos(a) + m_data[7] * 0 + m_data[8] * -sin(a),
-							  m_data[6] * 0 + m_data[7] * 1 + m_data[8] * 0,
-							  m_data[6] * sin(a) + m_data[7] * 0 + m_data[8] * cos(a));
-
-		return Mat;
-	}
-
-<<<<<<< HEAD
-	Matrix3 setRotateZ(float a)
-	{
-		Matrix3 Mat = Matrix3(m_data[0] * cos(a) + m_data[1] * -sin(a) + m_data[2] * 0,
-							  m_data[0] * sin(a) + m_data[1] * cos(a) + m_data[2] * 0,
-							  m_data[0] * 0 + m_data[1] * 0 + m_data[2] * 1,
-							  m_data[3] * cos(a) + m_data[4] * -sin(a) + m_data[5] * 0,
-							  m_data[3] * sin(a) + m_data[4] * cos(a) + m_data[5] * 0,
-							  m_data[3] * 0 + m_data[4] * 0 + m_data[5] * 1,
-							  m_data[6] * cos(a) + m_data[7] * -sin(a) + m_data[8] * 0,
-							  m_data[6] * sin(a) + m_data[7] * cos(a) + m_data[8] * 0,
-							  m_data[6] * 0 + m_data[7] * 0 + m_data[8] * 1);
-=======
 	Matrix3 RotateSetX(float a)
 	{
 		Matrix3 MAT = Matrix3(m_data[0] * 1, m_data[1] * 0, m_data[2] * 0,
@@ -379,6 +338,7 @@ public:
 
 		return MAT;
 	}
+
 	Matrix3 RotateSetY(float a)
 	{
 		Matrix3 MAT = Matrix3(m_data[0] * cos(a), m_data[1] * 0, m_data[2] * sin(a),
@@ -396,10 +356,10 @@ public:
 		return MAT;
 	}
 
->>>>>>> origin/master
 
-		return Mat;
-	}
+
+		
+	
 	void PrintMatrix3()
 	{
 		cout << "3D Matrix" << endl;
@@ -629,11 +589,9 @@ int main()
 	Mat2Mult.PirntMatrix2();
 
 
-<<<<<<< HEAD
-	Matrix3 MatA3 = Matrix3(1,0,0,0,1,0,0,0,1);
-=======
+
+	
 	Matrix3 MatA3 = Matrix3(1, 0, 0, 0, 1, 0, 0, 0, 1);
->>>>>>> origin/master
 	Matrix3 MatB3 = Matrix3(9, 8, 7, 6, 5, 4, 3, 2, 1);
 	Vector3 Vec3 = Vector3(3, 7, 0);
 	Matrix3 Mat3Mult = MatA3.Multiply(MatB3);
@@ -646,17 +604,13 @@ int main()
 	MatB3.PrintMatrix3();
 	cout << "multiplying the two above 3d matricies together" << endl;
 	Mat3Mult.PrintMatrix3();
-<<<<<<< HEAD
-	Matrix3 ya = MatA3.setRotateY(90);
-	ya.PrintMatrix3();
-=======
 	Matrix3 rotX = MatA3.RotateSetX(90);
 	rotX.PrintMatrix3();
 	Matrix3 rotY = MatA3.RotateSetY(90);
 	rotY.PrintMatrix3();
 	Matrix3 rotZ = MatA3.RotateSetZ(90);
 	rotY.PrintMatrix3();
->>>>>>> origin/master
+
 
 
 	Matrix4 MatA4 = Matrix4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
