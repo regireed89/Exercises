@@ -8,14 +8,14 @@ class Vector2
 public:
 
 	float x, y;
-	Vector2() {};
-	Vector2(float a, float b)
+	Vector2() {};//default constructor
+	Vector2(float a, float b)//constuctor takes two float arguments
 	{
 		x = a;
 		y = b;
 	}
 
-	Vector2 add(Vector2 &other)
+	Vector2 add(Vector2 &other)//function to add two vectors together
 	{
 
 		float a = this->x + other.x;
@@ -24,7 +24,7 @@ public:
 		return Vector2(a, b);
 	}
 
-	Vector2 subtract(Vector2 &other)
+	Vector2 subtract(Vector2 &other)//function to subtract one vector from another
 	{
 		float a = this->x - other.x;
 		float b = this->y - other.y;
@@ -32,7 +32,7 @@ public:
 		return Vector2(a, b);
 	}
 
-	Vector2 ScalarMult(Vector2 &mult)
+	Vector2 ScalarMult(Vector2 &mult)//function to multiply 2d vectors
 	{
 		float a = this->x * mult.x;
 		float b = this->y * mult.y;
@@ -40,7 +40,7 @@ public:
 		return Vector2(a, b);
 	}
 
-	float Magnitude()
+	float Magnitude()//function to find the magnitude of a 2d vector
 	{
 		float a = sqrt(x*x + y*y);
 
@@ -48,14 +48,14 @@ public:
 		return a;
 	}
 
-	Vector2 Normalize()
+	Vector2 Normalize()//function to normalize a vector
 	{
 		Vector2 vec = Vector2(x / Magnitude(), y / Magnitude());
 
 		return vec;
 	}
 
-	float DotProduct(Vector2 &other)
+	float DotProduct(Vector2 &other)//function to find the dotproduct of two 2d vectors
 	{
 		float a = this->x * other.x;
 		float b = this->y * other.y;
@@ -64,7 +64,7 @@ public:
 		return c;
 	}
 
-	void Print()
+	void Print()//prints out the vector
 	{
 		cout << "2D Vector" << endl;
 		cout << "x=" << x << "y=" << y << endl;
@@ -81,8 +81,8 @@ private:
 
 public:
 	float x, y, z;
-	Vector3() {};
-	Vector3(float a, float b, float c)
+	Vector3() {};//default constructor
+	Vector3(float a, float b, float c)//constructor takes three float arguments
 	{
 		x = a;
 		y = b;
@@ -358,6 +358,7 @@ public:
 		return Mat;
 	}
 
+<<<<<<< HEAD
 	Matrix3 setRotateZ(float a)
 	{
 		Matrix3 Mat = Matrix3(m_data[0] * cos(a) + m_data[1] * -sin(a) + m_data[2] * 0,
@@ -369,6 +370,33 @@ public:
 							  m_data[6] * cos(a) + m_data[7] * -sin(a) + m_data[8] * 0,
 							  m_data[6] * sin(a) + m_data[7] * cos(a) + m_data[8] * 0,
 							  m_data[6] * 0 + m_data[7] * 0 + m_data[8] * 1);
+=======
+	Matrix3 RotateSetX(float a)
+	{
+		Matrix3 MAT = Matrix3(m_data[0] * 1, m_data[1] * 0, m_data[2] * 0,
+			m_data[3] * 0, m_data[4] * cos(a), m_data[5] * -sin(a),
+			m_data[6] * 0, m_data[7] * sin(a), m_data[8] * cos(a));
+
+		return MAT;
+	}
+	Matrix3 RotateSetY(float a)
+	{
+		Matrix3 MAT = Matrix3(m_data[0] * cos(a), m_data[1] * 0, m_data[2] * sin(a),
+			m_data[3] * 0, m_data[4] * 1, m_data[5] * 0,
+			m_data[6] * -sin(a), m_data[7] * 0, m_data[8] * cos(a));
+
+		return MAT;
+	}
+	Matrix3 RotateSetZ(float a)
+	{
+		Matrix3 MAT = Matrix3(m_data[0] * cos(a), m_data[1] * -sin(a), m_data[2] * 0,
+			m_data[3] * sin(a), m_data[4] * cos(a), m_data[5] * 0,
+			m_data[6] * 0, m_data[7] * 0, m_data[8] * 1);
+
+		return MAT;
+	}
+
+>>>>>>> origin/master
 
 		return Mat;
 	}
@@ -412,21 +440,21 @@ public:
 	Matrix4 Multiply(Matrix4 &other)
 	{
 		Matrix4 Mat = Matrix4(m_data[0] * other.m_data[0] + m_data[1] * other.m_data[4] + m_data[2] * other.m_data[8] + m_data[3] * other.m_data[12],
-							  m_data[0] * other.m_data[1] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[9] + m_data[3] * other.m_data[13],
-							  m_data[0] * other.m_data[2] + m_data[1] * other.m_data[6] + m_data[2] * other.m_data[10] + m_data[3] * other.m_data[14],
-							  m_data[0] * other.m_data[3] + m_data[1] * other.m_data[7] + m_data[2] * other.m_data[11] + m_data[3] * other.m_data[15],
-							  m_data[4] * other.m_data[0] + m_data[5] * other.m_data[4] + m_data[6] * other.m_data[8] + m_data[7] * other.m_data[12],
-							  m_data[4] * other.m_data[1] + m_data[5] * other.m_data[5] + m_data[6] * other.m_data[9] + m_data[7] * other.m_data[13],
-							  m_data[4] * other.m_data[2] + m_data[5] * other.m_data[6] + m_data[6] * other.m_data[10] + m_data[7] * other.m_data[14],
-							  m_data[4] * other.m_data[3] + m_data[5] * other.m_data[7] + m_data[6] * other.m_data[11] + m_data[7] * other.m_data[15],
-							  m_data[8] * other.m_data[0] + m_data[9] * other.m_data[4] + m_data[10] * other.m_data[8] + m_data[11] * other.m_data[12],
-							  m_data[8] * other.m_data[1] + m_data[9] * other.m_data[5] + m_data[10] * other.m_data[9] + m_data[11] * other.m_data[13],
-							  m_data[8] * other.m_data[2] + m_data[9] * other.m_data[6] + m_data[10] * other.m_data[10] + m_data[11] * other.m_data[14],
-							  m_data[8] * other.m_data[3] + m_data[9] * other.m_data[7] + m_data[10] * other.m_data[11] + m_data[11] * other.m_data[15],
-							  m_data[12] * other.m_data[0] + m_data[13] * other.m_data[4] + m_data[14] * other.m_data[8] + m_data[15] * other.m_data[12],
-							  m_data[12] * other.m_data[1] + m_data[13] * other.m_data[5] + m_data[14] * other.m_data[9] + m_data[15] * other.m_data[13],
-							  m_data[12] * other.m_data[2] + m_data[13] * other.m_data[6] + m_data[14] * other.m_data[10] + m_data[15] * other.m_data[14],
-							  m_data[12] * other.m_data[3] + m_data[13] * other.m_data[7] + m_data[14] * other.m_data[11] + m_data[15] * other.m_data[15]);
+			m_data[0] * other.m_data[1] + m_data[1] * other.m_data[5] + m_data[2] * other.m_data[9] + m_data[3] * other.m_data[13],
+			m_data[0] * other.m_data[2] + m_data[1] * other.m_data[6] + m_data[2] * other.m_data[10] + m_data[3] * other.m_data[14],
+			m_data[0] * other.m_data[3] + m_data[1] * other.m_data[7] + m_data[2] * other.m_data[11] + m_data[3] * other.m_data[15],
+			m_data[4] * other.m_data[0] + m_data[5] * other.m_data[4] + m_data[6] * other.m_data[8] + m_data[7] * other.m_data[12],
+			m_data[4] * other.m_data[1] + m_data[5] * other.m_data[5] + m_data[6] * other.m_data[9] + m_data[7] * other.m_data[13],
+			m_data[4] * other.m_data[2] + m_data[5] * other.m_data[6] + m_data[6] * other.m_data[10] + m_data[7] * other.m_data[14],
+			m_data[4] * other.m_data[3] + m_data[5] * other.m_data[7] + m_data[6] * other.m_data[11] + m_data[7] * other.m_data[15],
+			m_data[8] * other.m_data[0] + m_data[9] * other.m_data[4] + m_data[10] * other.m_data[8] + m_data[11] * other.m_data[12],
+			m_data[8] * other.m_data[1] + m_data[9] * other.m_data[5] + m_data[10] * other.m_data[9] + m_data[11] * other.m_data[13],
+			m_data[8] * other.m_data[2] + m_data[9] * other.m_data[6] + m_data[10] * other.m_data[10] + m_data[11] * other.m_data[14],
+			m_data[8] * other.m_data[3] + m_data[9] * other.m_data[7] + m_data[10] * other.m_data[11] + m_data[11] * other.m_data[15],
+			m_data[12] * other.m_data[0] + m_data[13] * other.m_data[4] + m_data[14] * other.m_data[8] + m_data[15] * other.m_data[12],
+			m_data[12] * other.m_data[1] + m_data[13] * other.m_data[5] + m_data[14] * other.m_data[9] + m_data[15] * other.m_data[13],
+			m_data[12] * other.m_data[2] + m_data[13] * other.m_data[6] + m_data[14] * other.m_data[10] + m_data[15] * other.m_data[14],
+			m_data[12] * other.m_data[3] + m_data[13] * other.m_data[7] + m_data[14] * other.m_data[11] + m_data[15] * other.m_data[15]);
 
 		return Mat;
 	}
@@ -440,6 +468,33 @@ public:
 		float d = m_data[12] * vec.x + m_data[13] * vec.y + m_data[14] * vec.z + m_data[15] * vec.w;
 		return Vector4(a, b, c, d);
 
+	}
+	Matrix4 RotateSetX(float a)
+	{
+		Matrix4 MAT = Matrix4(m_data[0] * 1, m_data[1] * 0, m_data[2] * 0, m_data[3] * 0,
+			m_data[4] * 0, m_data[5] * cos(a), m_data[6] * -sin(a), m_data[7] * 0,
+			m_data[8] * 0, m_data[9] * sin(a), m_data[10] * cos(a), m_data[11] * 0,
+			m_data[12] * 0, m_data[13] * 0, m_data[14] * 0, m_data[15] * 1);
+
+		return MAT;
+	}
+	Matrix4 RotateSetY(float a)
+	{
+		Matrix4 MAT = Matrix4(m_data[0] * cos(a), m_data[1] * 0, m_data[2] * sin(a), m_data[3] * 0,
+			m_data[4] * 0, m_data[5] * 1, m_data[6] * 0, m_data[7] * 0,
+			m_data[8] * -sin(a), m_data[9] * 0, m_data[10] * cos(a), m_data[11] * 0,
+			m_data[12] * 0, m_data[13] * 0, m_data[14] * 0, m_data[15] * 1);
+
+		return MAT;
+	}
+	Matrix4 RotateSetZ(float a)
+	{
+		Matrix4 MAT = Matrix4(m_data[0] * cos(a), m_data[1] * -sin(a), m_data[2] * 0, m_data[3] * 0,
+			m_data[4] * sin(a), m_data[5] * cos(a), m_data[6] * 0, m_data[7] * 0,
+			m_data[8] * 0, m_data[9] * 0, m_data[10] * 1, m_data[11] * 0,
+			m_data[12] * 0, m_data[13] * 0, m_data[14] * 0, m_data[15] * 1);
+
+		return MAT;
 	}
 
 
@@ -557,7 +612,7 @@ int main()
 	Vec4BNorm.Print();
 	cout << "the dot product of both vectors" << endl;
 	cout << Vec4Dot << endl;
-	
+
 
 	Matrix2 MatA2 = Matrix2(4, 3, 2, 1);
 	Matrix2 MatB2 = Matrix2(1, 2, 3, 4);
@@ -574,7 +629,11 @@ int main()
 	Mat2Mult.PirntMatrix2();
 
 
+<<<<<<< HEAD
 	Matrix3 MatA3 = Matrix3(1,0,0,0,1,0,0,0,1);
+=======
+	Matrix3 MatA3 = Matrix3(1, 0, 0, 0, 1, 0, 0, 0, 1);
+>>>>>>> origin/master
 	Matrix3 MatB3 = Matrix3(9, 8, 7, 6, 5, 4, 3, 2, 1);
 	Vector3 Vec3 = Vector3(3, 7, 0);
 	Matrix3 Mat3Mult = MatA3.Multiply(MatB3);
@@ -587,11 +646,20 @@ int main()
 	MatB3.PrintMatrix3();
 	cout << "multiplying the two above 3d matricies together" << endl;
 	Mat3Mult.PrintMatrix3();
+<<<<<<< HEAD
 	Matrix3 ya = MatA3.setRotateY(90);
 	ya.PrintMatrix3();
+=======
+	Matrix3 rotX = MatA3.RotateSetX(90);
+	rotX.PrintMatrix3();
+	Matrix3 rotY = MatA3.RotateSetY(90);
+	rotY.PrintMatrix3();
+	Matrix3 rotZ = MatA3.RotateSetZ(90);
+	rotY.PrintMatrix3();
+>>>>>>> origin/master
 
 
-	Matrix4 MatA4 = Matrix4(7, 8, 4, 8, 9, 4, 7, 6, 2, 3, 6, 5, 2, 8, 0, 4);
+	Matrix4 MatA4 = Matrix4(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
 	Matrix4 MatB4 = Matrix4(16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1);
 	Vector4 Vec4 = Vector4(3, 7, 0, 5);
 	Matrix4 Mat4Mult = MatA4.Multiply(MatB4);
@@ -604,6 +672,12 @@ int main()
 	MatB4.PrintMatrix4();
 	cout << "multiplying the two above 4d matricies together" << endl;
 	Mat4Mult.PrintMatrix4();
+	Matrix4 m = MatA4.RotateSetX(90);
+	m.PrintMatrix4();
+	Matrix4 e = MatA4.RotateSetY(90);
+	e.PrintMatrix4();
+	Matrix4 p = MatA4.RotateSetZ(90);
+	p.PrintMatrix4();
 	system("pause");
 	return 0;
 
