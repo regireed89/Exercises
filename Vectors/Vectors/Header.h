@@ -4,71 +4,29 @@ using namespace std;
 
 class Vector2
 {
-public:
 
-	float x, y;
-	Vector2() {};//default constructor
-	Vector2(float a, float b)//constuctor takes two float arguments
-	{
-		x = a;
-		y = b;
-	}
+	
+	public:
 
-	Vector2 add(Vector2 &other)//function to add two vectors together
-	{
+		float x, y;
+		Vector2();
+		Vector2(float a, float b);
+		Vector2 add(Vector2 &other);
+		Vector2 subtract(Vector2 &other);//function to subtract one vector from another
 
-		float a = this->x + other.x;
-		float b = this->y + other.y;
+		Vector2 ScalarMult(Vector2 &mult);//function to multiply 2d vectors
 
-		return Vector2(a, b);
-	}
+		float Magnitude();//function to find the magnitude of a 2d vector
 
-	Vector2 subtract(Vector2 &other)//function to subtract one vector from another
-	{
-		float a = this->x - other.x;
-		float b = this->y - other.y;
-
-		return Vector2(a, b);
-	}
-
-	Vector2 ScalarMult(Vector2 &mult)//function to multiply 2d vectors
-	{
-		float a = this->x * mult.x;
-		float b = this->y * mult.y;
-
-		return Vector2(a, b);
-	}
-
-	float Magnitude()//function to find the magnitude of a 2d vector
-	{
-		float a = sqrt(x*x + y*y);
+		Vector2 Normalize();//function to normalize a vector
 
 
-		return a;
-	}
+		float DotProduct(Vector2 &other);//function to find the dotproduct of two 2d vectors
 
-	Vector2 Normalize()//function to normalize a vector
-	{
-		Vector2 vec = Vector2(x / Magnitude(), y / Magnitude());
 
-		return vec;
-	}
+		void Print();//prints out the vector
 
-	float DotProduct(Vector2 &other)//function to find the dotproduct of two 2d vectors
-	{
-		float a = this->x * other.x;
-		float b = this->y * other.y;
-		float c = a + b;
-
-		return c;
-	}
-
-	void Print()//prints out the vector
-	{
-		cout << "2D Vector" << endl;
-		cout << "x=" << x << "y=" << y << endl;
-		cout << "____" << endl;
-	}
+	
 
 
 };

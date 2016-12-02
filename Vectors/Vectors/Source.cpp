@@ -467,6 +467,7 @@ public:
 
 
 };
+
 int main()
 {
 	Vector2 Vec2A = Vector2(4, 5);
