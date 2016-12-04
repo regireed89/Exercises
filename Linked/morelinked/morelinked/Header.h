@@ -34,7 +34,7 @@ public:
 		current = current->link;
 
 	}
-	bool operator==(linkedListIterator<Type>& list)const;
+	bool operator== (linkedListIterator<Type>& list)const
 	{
 		if (current == current)
 		{
@@ -71,6 +71,7 @@ protected:
 	nodeType<Type> *last;
 
 public:
+
 
 	void initializeList() 
 	{
@@ -201,12 +202,10 @@ public:
 		count = 0;
 	}
 
-	linkedListType(const linkedListType<Type> otherList)
-	{
-
-	}
+	
 
 
+	linkedListType(const linkedListType<Type> otherList) {};
 
 
 
