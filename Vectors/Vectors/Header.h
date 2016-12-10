@@ -9,9 +9,9 @@ class Vector2
 		float x, y;
 		Vector2();
 		Vector2(float a, float b);
-		Vector2 add(Vector2 &other);
-		Vector2 subtract(Vector2 &other);//function to subtract one vector from another
-		Vector2 ScalarMult(Vector2 &mult);//function to multiply 2d vectors
+		Vector2 operator +(Vector2 &other);
+		Vector2 operator -(Vector2 &other);//function to subtract one vector from another
+		Vector2 operator *(const float &mult);//function to multiply 2d vectors
 		float Magnitude();//function to find the magnitude of a 2d vector
 		Vector2 Normalize();//function to normalize a vector
 		float DotProduct(Vector2 &other);//function to find the dotproduct of two 2d vectors
@@ -24,9 +24,9 @@ public:
 	float x, y, z;
 	Vector3() {};//default constructor
 	Vector3(float a, float b, float c);//constructor takes three float arguments
-	Vector3 add(Vector3 &other);
-	Vector3 subtract(Vector3 &other);
-	Vector3 ScalarMult(Vector3 &mult);
+	Vector3 operator +(Vector3 &other);
+	Vector3 operator -(Vector3 &other);
+	Vector3 operator *(const float &mult);
 	float Magnitude();
 	Vector3 Normalize();
 	float DotProduct(Vector3 &other);
@@ -42,9 +42,9 @@ class Vector4
 public:
 	float x, y, z, w;
 	Vector4(float a, float b, float c, float d);
-	Vector4 add(Vector4 &other);
-	Vector4 subtract(Vector4 &other);
-	Vector4 ScalarMult(Vector4 &mult);
+	Vector4 operator +(Vector4 &other);
+	Vector4 operator -(Vector4 &other);
+	Vector4 operator *(const float &mult);
 	float Magnitude();
 	Vector4 Normalize();
 	float DotProduct(Vector4 &other);

@@ -11,16 +11,12 @@ using namespace std;
 		y = b;
 	}
 
-	Vector2 Vector2::add(Vector2 &other)//function to add two vectors together
+	Vector2 Vector2::operator +(Vector2 &other)//function to add two vectors together
 	{
-
-		float a = this->x + other.x;
-		float b = this->y + other.y;
-
-		return Vector2(a, b);
+		return Vector2(x + other.x, y + other.y);
 	}
 
-	Vector2 Vector2::subtract(Vector2 &other)//function to subtract one vector from another
+	Vector2 Vector2::operator -(Vector2 &other)//function to subtract one vector from another
 	{
 		float a = this->x - other.x;
 		float b = this->y - other.y;
@@ -28,17 +24,14 @@ using namespace std;
 		return Vector2(a, b);
 	}
 
-	Vector2 Vector2::ScalarMult(Vector2 &mult)//function to multiply 2d vectors
+	Vector2 Vector2::operator *(const float &mult)//function to multiply 2d vectors
 	{
-		float a = this->x * mult.x;
-		float b = this->y * mult.y;
-
-		return Vector2(a, b);
+		return Vector2(x*mult, y*mult);
 	}
 
 	float Vector2::Magnitude()//function to find the magnitude of a 2d vector
 	{
-		float a = sqrt(x*x + y*y);
+		float a = sqrt((x*x) + (y*y));
 
 		return a;
 	}
@@ -66,7 +59,7 @@ using namespace std;
 		cout << "____" << endl;
 	}
 
-	Vector3::Vector3() {};//default constructor
+	
 	Vector3::Vector3(float a, float b, float c)//constructor takes three float arguments
 	{
 		x = a;
@@ -74,45 +67,30 @@ using namespace std;
 		z = c;
 	}
 
-	Vector3 Vector3::add(Vector3 &other)
+	Vector3 Vector3::operator+(Vector3 &other)
 	{
-
-		float a = this->x + other.x;
-		float b = this->y + other.y;
-		float c = this->z + other.z;
-
-		return Vector3(a, b, c);
+		return Vector3(x+other.x, y+other.y, z+other.z);
 	}
 
-	Vector3 Vector3::subtract(Vector3 &other)
+	Vector3 Vector3::operator-(Vector3 &other)
 	{
-		float a = this->x - other.x;
-		float b = this->y - other.y;
-		float c = this->z - other.z;
-		return Vector3(a, b, c);
+		return Vector3(x + other.x, y - other.y, z - other.z);
 	}
 
-	Vector3 Vector3::ScalarMult(Vector3 &mult)
+	Vector3 Vector3::operator*(const float &mult)
 	{
-		float a = this->x * mult.x;
-		float b = this->y * mult.y;
-		float c = this->z * mult.z;
-
-		return Vector3(a, b, c);
+		return Vector3(x*mult, y*mult, z*mult);
 	}
 
 	float Vector3::Magnitude()
 	{
-		float a = sqrt(x*x + y*y + z*z);
-
-
+		float a = sqrt((x*x) + (y*y) + (z*z));
 		return a;
 	}
 
 	Vector3 Vector3::Normalize()
 	{
 		Vector3 vec = Vector3(x / Magnitude(), y / Magnitude(), z / Magnitude());
-
 		return vec;
 	}
 
@@ -151,39 +129,24 @@ using namespace std;
 		w = d;
 	}
 
-	Vector4 Vector4::add(Vector4 &other)
+	Vector4 Vector4::operator +(Vector4 &other)
 	{
-		float a = this->x + other.x;
-		float b = this->y + other.y;
-		float c = this->z + other.z;
-		float d = this->w + other.w;
-
-		return Vector4(a, b, c, d);
-	}
-	Vector4 Vector4::subtract(Vector4 &other)
-	{
-		float a = this->x - other.x;
-		float b = this->y - other.y;
-		float c = this->z - other.z;
-		float d = this->w - other.w;
-
-		return Vector4(a, b, c, d);
+		return Vector4(x + other.x, y + other.y, z + other.z, w + other.w);
 	}
 
-	Vector4 Vector4::ScalarMult(Vector4 &mult)
+	Vector4 Vector4::operator-(Vector4 &other)
 	{
-		float a = this->x * mult.x;
-		float b = this->y * mult.y;
-		float c = this->z * mult.z;
-		float d = this->w * mult.w;
-
-		return Vector4(a, b, c, d);
+		return Vector4(x - other.x, y - other.y, z - other.z, w - other.w);
 	}
+
+	Vector4 Vector4::operator*(const float &mult)
+	{
+		return Vector4(x*mult,y*mult,z*mult,w*mult);
+	}
+
 	float Vector4::Magnitude()
 	{
-		float a = sqrt(x*x + y*y + z*z + w*w);
-
-
+		float a = sqrt((x*x) + (y*y) + (z*z) + (w*w));
 		return a;
 	}
 
@@ -216,7 +179,7 @@ using namespace std;
 
 
 
-	Matrix2::Matrix2() {};
+	
 	Matrix2::Matrix2(int a, int b, int c, int d)
 	{
 		m_data = new int[4];
@@ -253,7 +216,7 @@ using namespace std;
 
 
 
-	Matrix3::Matrix3() {};
+	
 	Matrix3::Matrix3(int a, int b, int c, int d, int e, int f, int g, int h, int i)
 	{
 		m_data = new int[9];
@@ -328,8 +291,8 @@ using namespace std;
 
 
 
-	Matrix4() {};
-	Matrix4(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p)
+	
+	Matrix4::Matrix4(int a, int b, int c, int d, int e, int f, int g, int h, int i, int j, int k, int l, int m, int n, int o, int p)
 	{
 		m_data = new int[16];
 		m_data[0] = a;
@@ -425,9 +388,9 @@ int main()
 {
 	Vector2 Vec2A = Vector2(4, 5);
 	Vector2 Vec2B = Vector2(6, 2);
-	Vector2 Vec2Add = Vec2A.add(Vec2B);
-	Vector2 Vec2Sub = Vec2A.subtract(Vec2B);
-	Vector2 Vec2Mult = Vec2A.ScalarMult(Vec2B);
+	Vector2 Vec2Add = Vec2A + Vec2B;
+	Vector2 Vec2Sub = Vec2A - Vec2B;
+	Vector2 Vec2Mult = Vec2A * 5;
 	float Vec2AMag = Vec2A.Magnitude();
 	float Vec2BMag = Vec2B.Magnitude();
 	Vector2 Vec2ANorm = Vec2A.Normalize();
@@ -459,9 +422,9 @@ int main()
 
 	Vector3 Vec3A = Vector3(4, 5, 6);
 	Vector3 Vec3B = Vector3(6, 2, 9);
-	Vector3 Vec3Add = Vec3A.add(Vec3B);
-	Vector3 Vec3Sub = Vec3A.subtract(Vec3B);
-	Vector3 Vec3Mult = Vec3A.ScalarMult(Vec3B);
+	Vector3 Vec3Add = Vec3A+Vec3B;
+	Vector3 Vec3Sub = Vec3A-Vec3B;
+	Vector3 Vec3Mult = Vec3A*5;
 	float Vec3AMag = Vec3A.Magnitude();
 	float Vec3BMag = Vec3B.Magnitude();
 	Vector3 Vec3ANorm = Vec3A.Normalize();
@@ -496,9 +459,9 @@ int main()
 
 	Vector4 Vec4A = Vector4(4, 5, 6, 7);
 	Vector4 Vec4B = Vector4(6, 2, 9, 3);
-	Vector4 Vec4Add = Vec4A.add(Vec4B);
-	Vector4 Vec4Sub = Vec4A.subtract(Vec4B);
-	Vector4 Vec4Mult = Vec4A.ScalarMult(Vec4B);
+	Vector4 Vec4Add = Vec4A+Vec4B;
+	Vector4 Vec4Sub = Vec4A-Vec4B;
+	//Vector4 Vec4Mult = Vec4A=5;
 	float Vec4AMag = Vec4A.Magnitude();
 	float Vec4BMag = Vec4B.Magnitude();
 	Vector4 Vec4ANorm = Vec4A.Normalize();
@@ -515,7 +478,7 @@ int main()
 	cout << "second 4d vector subtracted from first 2d vector" << endl;
 	Vec4Sub.Print();
 	cout << "both 4d vectors multiplied" << endl;
-	Vec4Mult.Print();
+	//Vec4Mult.Print();
 	cout << "magnitude of first 4d vector" << endl;
 	cout << Vec4AMag << endl;
 	cout << "magnitude of second 4d vector" << endl;
