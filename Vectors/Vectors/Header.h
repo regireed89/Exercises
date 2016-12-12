@@ -17,6 +17,7 @@ class Vector2
 		float DotProduct(Vector2 &other);//function to find the dotproduct of two 2d vectors
 		void Print();//prints out the vector
 };
+
 class Vector3
 {
 
@@ -36,6 +37,7 @@ public:
 
 
 };
+
 class Vector4
 {
 
@@ -50,6 +52,7 @@ public:
 	float DotProduct(Vector4 &other);
 	void Print();
 };
+
 class Matrix2
 {
 private:
@@ -63,6 +66,7 @@ public:
 	void PirntMatrix2();
 
 };
+
 class Matrix3
 {
 private:
@@ -77,6 +81,7 @@ public:
 	Matrix3 RotateSetZ(float a);
 	void PrintMatrix3();
 };
+
 class Matrix4
 {
 private:
