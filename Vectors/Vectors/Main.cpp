@@ -138,10 +138,13 @@ int main()
 	cout << "multiplying the two above 3d matricies together" << endl;
 	Mat3Mult.PrintMatrix3();
 	Matrix3 rotX = MatA3.RotateSetX(1.571);
+	cout << "first matrix rotated around the x-axis" << endl;
 	rotX.PrintMatrix3();
 	Matrix3 rotY = MatA3.RotateSetY(1.571);
+	cout << "first matrix rotated around the y-axis" << endl;
 	rotY.PrintMatrix3();
 	Matrix3 rotZ = MatA3.RotateSetZ(1.571);
+	cout << "first matrix rotated around the z-axis" << endl;
 	rotZ.PrintMatrix3();
 
 
@@ -159,10 +162,13 @@ int main()
 	cout << "multiplying the two above 4d matricies together" << endl;
 	Mat4Mult.PrintMatrix4();
 	Matrix4 m = MatA4.RotateSetX(1.571);
+	cout << "first matrix rotated around the x-axis" << endl;
 	m.PrintMatrix4();
 	Matrix4 e = MatA4.RotateSetY(1.571);
+	cout << "first matrix rotated around the y-axis" << endl;
 	e.PrintMatrix4();
 	Matrix4 p = MatA4.RotateSetZ(1.571);
+	cout << "first matrix rotated around the z-axis" << endl;
 	p.PrintMatrix4();
 	system("pause");
 	return 0;
