@@ -134,11 +134,11 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Exercises\Vectors\Vectors\Header.h" />
+    <ClInclude Include="..\..\Vectors\Vectors\Header.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Exercises\Vectors\Vectors\Main.cpp" />
-    <ClCompile Include="..\..\Exercises\Vectors\Vectors\Source.cpp" />
+    <ClCompile Include="..\..\Vectors\Vectors\Main.cpp" />
+    <ClCompile Include="..\..\Vectors\Vectors\Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

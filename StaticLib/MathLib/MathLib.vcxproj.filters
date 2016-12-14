@@ -18,15 +18,15 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Exercises\Vectors\Vectors\Header.h">
+    <ClInclude Include="..\..\Vectors\Vectors\Header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Exercises\Vectors\Vectors\Source.cpp">
+    <ClCompile Include="..\..\Vectors\Vectors\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Exercises\Vectors\Vectors\Main.cpp">
+    <ClCompile Include="..\..\Vectors\Vectors\Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
