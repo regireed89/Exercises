@@ -153,7 +153,12 @@ public:
 		count++:
 	}
 
-	void deleteNode(const Type& nodeInfo){}
+	void deleteNode(const Type& nodeInfo)
+	{
+	
+	
+
+	}
 
 	linkedListIterator<Type> begin()
 	{
@@ -172,7 +177,7 @@ public:
 		count = 0;
 	}
 
-	linkedListType(const linkedListType<Type> otherList) {};
+	//linkedListType(const linkedListType<Type> otherList) {};
 };
 
 

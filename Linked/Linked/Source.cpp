@@ -12,7 +12,7 @@ template<typename Type>
 class LinkedList
 {
 protected:
-<<<<<<< HEAD
+
 	int count = 0;
 	nodeType<Type>*first;
 	nodeType<Type>*last;
@@ -25,7 +25,7 @@ public:
 	void Print();
 
 };
-=======
+
 	int count;
 	nodeType<Type> *first;
 	nodeType<Type> *last;
@@ -75,7 +75,7 @@ const Type LinkedList<Type>::front()
 {
 	return count;
 }
->>>>>>> origin/master
+
 
 template<typename Type>
 const int LinkedList<Type>::length()
