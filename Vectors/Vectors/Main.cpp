@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Header.h"
+#include "MathFuncsLib.h"
 using namespace std;
 
 int main()
