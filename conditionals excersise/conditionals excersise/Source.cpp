@@ -1,43 +1,67 @@
 #include <iostream>
-int main()
-{
-	////1
+using namespace std;
+
+int main() 
+{ 
+	////1  DONE
 	//int y = 0;
 	//if (y == 0)
 	//{
-	//	printf("x = 100");
-	//	system("pause");
-	//	
-
+	//	int x = 100;
  //   }
  //   
 	//{
 	//	//2
 	//	int x = 100;
 	//	int z = 2000;
-
+ //
 	//		if (x > z)
 	//		{
-	//			printf("%i", x);
+	//			cout << x << endl;
 	//	    }
 	//		else
 	//		{
-	//			printf("%i", z);
+	//			cout << z << endl;
 	//		}
-
-	//	system("pause");
+	//		 
 	//	
-
-
+	//	
 	//}
 
+
+	////3
+	//{
+	//	int sum = 3+5+1+4+2;
+	//	if (sum % 2 == 0)
+	//	{
+
+	//		cout << "12345";
+
+	//	}
+
+	//	else
+	//	{
+	//		cout << "54321";
+	//	}
+	//	if (sum == 0)
+	//	{
+	//		cout << "35142";
+	//	}
+	//	system("pause");
+	//}
+
+
+
 	////4
+	//int choice;
 	//switch (choice)
 	//{
 	//case 1:
 	//	std::cout << "1";
 	//	break;
-	//case 2 || 3:
+
+	//case 2: 
+	//case 3:
 	//	std::cout << "2 or 3";
 	//	break;
 	//case 4:
@@ -46,11 +70,11 @@ int main()
 	//default:
 	//	break;
 	//}
-	//
+	
 	
 	
 	////5
-	//y = (x == 0) ? 0 : 10 / x
+	//y = (x == 0) ? 0 : 10 / x;
 
 
 		//6
@@ -98,8 +122,8 @@ int main()
 		system("pause");
 */
 
-	/*7
-	int m; 
+	//7
+	/*int m; 
 	std::cin >> m;
 	
 	if (m == 1)
