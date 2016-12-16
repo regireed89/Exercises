@@ -177,7 +177,7 @@ public:
 		count = 0;
 	}
 
-	//linkedListType(const linkedListType<Type> otherList) {};
+	linkedListType(const linkedListType<Type> &otherList) {};
 };
 
 
