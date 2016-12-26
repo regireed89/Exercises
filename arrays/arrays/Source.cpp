@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 int main()
 {
 
@@ -46,64 +47,75 @@ int main()
 	//2
 	//	/*A)
 	//	int values[] = { 2, 6, 10, 14 };
-	//	for (int f = 0; f < 1; f++)
 	//	std::cout << values[2] << "";
 	//	system("pause"); WILL DISPLAY 10
 	//B)
 	//	int values[] = { 2, 6, 10, 14 };
-	//	for (int f = 0; f < 1; f++)
 	//	std::cout << ++values[0] << "";
 	//	system("pause"); WILL DISPLAY 3
 	//C)
 	//	int values[] = { 2, 6, 10, 14 };
-	//	for (int f = 0; f < 1; f++)
 	//	std::cout << values[1]++ << "";
 	//	system("pause"); WILL DISPLAY 6*/
-	//	/* D)
-	//		int values[] = { 2, 6, 10, 14 };
-	//		for (int x = 2; x < 3; x++)
-	//			std::cout << values[++x] << "";
-	//			system("pause"); WILL DISPLAY 14
-	//	*/
+	//	D)
+	//	int values[] = { 2, 6, 10, 14 };
+	//	std::cout << values[++x] << "";
+	//	system("pause"); WILL DISPLAY 14
+	//	
+	//	E)
 	//	/*int values[] = { 2, 6, 10, 14 };
 	//	for (int x = 0; x < 1; x++)
 	//		std::cout << values[4] << "";
 	//	system("pause"); WILL DISPLAY 85899460*/
 
-	//	3
-	//	/*int data[10] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-	//	for (int x = 0; x < 11; x++)
-	//		std::cout << data[x] << "";
-	//		system("pause");
-	//*/
+		//3
+	{
+		int data[255];
+		int i, x;
+		for (i = 0; i < 10; i++)
+		{
+			data[i];
+			for (x = 10; x >= 1; x--)
+			{
+				data[i] = x;
+			}
+			std::cout << x;
+		}
+		system("pause");
+	}
 
 	//4
-	///*int jesus[5] = { 2, 3, 4, 5, 6 };
+	//int jesus[5] = { 2, 3, 4, 5, 6 };
 	//for (int x = 4; x >= 0; x--)
 	//	std::cout << jesus[x] << "";
-	//system("pause");*/
+	//system("pause");
 
 	//5
 
-	///*int pickle[10] = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
-	//for (int x = 9; x < 19; x++)
-	//
-	//	for (int y = 0; x <= 10; x++)
-	//
-	//		std::cout << pickle[x] << pickle[y] << "";
-	//system("pause");*/
+	/*int pickle[10] = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
+	int large = pickle[0];
+	int	small = pickle[0];
+	for (int x = 0; x < 10; x++)
+	{
+		if (pickle[x] > large)
+			large = pickle[x];
+		else if (pickle[x] < small)
+			small = pickle[x];
+	}
+			std::cout << large <<" "<< small;
+	system("pause");*/
 
 	//6
 
 
 
-	
-		int orange[3][3] = { {1, 2, 3}, 
 
-		                    {4, 5, 6}, 
+	/*	int orange[3][3] = { {1, 2, 3},
 
-						    {7, 8, 9}};
-		
+							{4, 5, 6},
+
+							{7, 8, 9}};
+
 		for (int t = 0; t < 3; t++)
 		{
 			for (int v = 0; v < 3; v++)
@@ -112,122 +124,122 @@ int main()
 			}
 			std::cout << std::endl;
 		}
-       system("pause");
-	
-
-
-	/*7
-
-	int days[29][5];*/
-
-
-//int health[5] = { 100, 100, 100, 100, 100, };
-//	int x = 0;
-//	
-//	int inputNum = 0;
-//	while (inputNum < 5)
-//
-//	{
-//		std::cout << "enter a number ('0'-'4') \n";
-//		std::cin >> x;
-//		inputNum++;
-//		
-//		if (x == 0)
-//		{		
-//			if (health[0] <= 20)
-//			{
-//				health[0] = 0;
-//				std::cout << "dead" << "\n";				
-//			}
-//			else
-//			{
-//				health[0] -= 40;
-//				std::cout << health[0] << "\n";
-//			}
-//		}
-//		else if (x == 1)
-//		{
-//			if (health[1] <= 20)
-//			{
-//				health[1] = 0;
-//				std::cout << "dead" << "\n";
-//			}
-//			else
-//			{
-//				health[1] -= 40;
-//				std::cout << health[1] << "\n";
-//			}
-//		}
-//		else if (x == 2)
-//		{
-//			if (health[2] <= 20)
-//			{
-//				health[2] = 0;
-//				std::cout << "dead" << "\n";
-//			}
-//			else
-//			{
-//				health[2] -= 40;
-//				std::cout << health[2] << "\n";
-//			}
-//		}
-//		else if (x == 3)
-//		{
-//			if (health[3] <= 20)
-//			{
-//				health[3] = 0;
-//				std::cout << "dead" << "\n";
-//			}
-//			else
-//			{
-//				health[3] -= 40;
-//				std::cout << health[3] << "\n";
-//			}
-//		}
-//		else if (x == 4)
-//		{
-//			if (health[4] <= 20)
-//			{
-//				health[4] = 0;
-//				std::cout << "dead" << "\n";
-//			}
-//			else
-//			{
-//				health[4] -= 40;
-//				std::cout << health[4] << "\n";
-//			}
-//		}
-//		else
-//		{
-//			std::cout << "ERROR" << "\n";
-//		}
-//		
-//		
-//	}
-//	
-//	std::cout <<  health[0], "health";
-//
-//	std::cout <<  health[1], "health";
-//
-//	std::cout <<  health[2], "health";
-//
-//	std::cout <<  health[3], "health";
-//
-//	std::cout <<  health[4], "health";
-//
+	   system("pause");*/
 
 
 
+	   /*7
 
-//9
+	   int days[29][5];*/
 
-//int Eat[3][7] = {}
+	   //8
+	int health[5] = { 100, 100, 100, 100, 100, };
+	int x = 0;
+
+	int inputNum = 0;
+	while (inputNum < 5)
+
+	{
+		std::cout << "enter a number ('0'-'4') \n";
+		std::cin >> x;
+		inputNum++;
+
+		if (x == 0)
+		{
+			if (health[0] <= 20)
+			{
+				health[0] = 0;
+				std::cout << "dead" << "\n";
+			}
+			else
+			{
+				health[0] -= 40;
+				std::cout << health[0] << "\n";
+			}
+		}
+		else if (x == 1)
+		{
+			if (health[1] <= 20)
+			{
+				health[1] = 0;
+				std::cout << "dead" << "\n";
+			}
+			else
+			{
+				health[1] -= 40;
+				std::cout << health[1] << "\n";
+			}
+		}
+		else if (x == 2)
+		{
+			if (health[2] <= 20)
+			{
+				health[2] = 0;
+				std::cout << "dead" << "\n";
+			}
+			else
+			{
+				health[2] -= 40;
+				std::cout << health[2] << "\n";
+			}
+		}
+		else if (x == 3)
+		{
+			if (health[3] <= 20)
+			{
+				health[3] = 0;
+				std::cout << "dead" << "\n";
+			}
+			else
+			{
+				health[3] -= 40;
+				std::cout << health[3] << "\n";
+			}
+		}
+		else if (x == 4)
+		{
+			if (health[4] <= 20)
+			{
+				health[4] = 0;
+				std::cout << "dead" << "\n";
+			}
+			else
+			{
+				health[4] -= 40;
+				std::cout << health[4] << "\n";
+			}
+		}
+		else
+		{
+			std::cout << "ERROR" << "\n";
+		}
+
+
+	}
+
+	std::cout << "player 1 has " << health[0] << " health" << endl;
+
+	std::cout << "player 2 has " << health[1] << " health" << endl;
+
+	std::cout << "player 3 has " << health[2] << " health" << endl;
+
+	std::cout << "player 4 has " << health[3] << " health" << endl;
+
+	std::cout << "player 5 has " << health[4] << " health" << endl;
 
 
 
 
-system("pause");
-	
+
+	//9
+
+	//int Eat[3][7] = {}
+
+
+
+
+	system("pause");
+
 
 
 
