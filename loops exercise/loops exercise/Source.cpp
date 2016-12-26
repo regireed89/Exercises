@@ -3,69 +3,86 @@ using namespace std;
 
 int main()
 {
-	/*{
+	cout << "Modify the for loop to include 0 and include 100 "<<endl;
+	{
+	cout<<"while"<<endl;
 		int x;
 		x = 100;
 		while (x >= 0)
 		{
 
-			cout << x;
+			cout << x<<" ";
 			x -= 2;
 		}
-	}*/
+		cout<<endl;
+	}
+
 	{
-		for (int x = 100; x >= 0; x--)
+	cout<<"for"<<endl;
+		for (int x = 100; x >= 0; x-=2)
 		{
-			cout << x;
+			cout << x<<" ";
 		}
+		cout << endl;
 	}
 
 
 
-
-	/*{
+	cout << "Modify the for loop to include 0 and not 100" << endl;
+	{
+		cout << "while"<<endl;
 		int x;
 		x = 100;
 
 		while (x >  0)
 		{
-			x -= 2;
-			cout << x;
+			x -= 1;
+			cout << x<<" ";
 		}
-	}*/
+		x += 1;
+		cout << endl;
+	}
 
 	{
-		for (int x = 100; x > 0; x--)
+		cout << "for" << endl;
+		int x = 100;
+		for (x = 100-1; x >= 0; x-=1)
 		{
-			cout << x;
+			
+			cout << x<<" ";
+
 		}
+		cout<<endl;
 	}
 
 
 
-
-	/*{
+	cout << "Modify the for loop to not include 0 and include 100 "<<endl;
+	{
+	cout << "while" << endl;
 		int x;
 		x = 100;
 
 		while (x > 0)
 		{
 
-			cout << x;
-			x -= 2;
+			cout << x<<" ";
+			x -= 1;
 		}
-
-	}*/
-	/*{
-		for (int x = 100; x < 0; x--)
+		cout << endl;
+	}
+	{
+	cout<<"for"<<endl;
+		for (int x = 100; x > 0; x--)
 		{
-			cout << x;
+			cout << x<<" ";
 		}
+		cout << endl;
+	}
 
-	}*/
-
-
-	/*{
+	cout << "Modify the for loop to decrement by 2" << endl;
+	{
+	cout<<"while"<<endl;
 		int x;
 		x = 100;
 
@@ -73,10 +90,19 @@ int main()
 		{
 
 			x -= 2;
-			cout << x;
+			cout << x<<" ";
 		}
+		cout << endl;
+	}
+	{
+		cout<<"for"<<endl;
+		for (int x = 100; x >= 0; x-=2)
+		{
 
-	}*/
+			cout << x << " ";
+		}
+		cout << endl;
+	}
 
 
 
