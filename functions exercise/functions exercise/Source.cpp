@@ -50,7 +50,7 @@ float smlValue(float a, float b)
 //#4
 float Half(float number)
 {
-	
+
 
 	float result = number / 2;
 
@@ -88,8 +88,8 @@ void CoinFlip()
 	char w = (x == f) ? printf("YOU WIN") : printf("YOU LOSE ");
 	std::cout << w;
 
-system("pause");
-system("cls");
+	system("pause");
+	system("cls");
 }
 //#6
 //int sum(int x, int y)
@@ -119,27 +119,71 @@ system("cls");
 //}
 
 //7
-int SumTo(int N)
+//int SumTo(int N)
+//{
+//	int y = 0;
+//	for (int i = 1; i <= N; i++)
+//	{
+//		y += i;
+//	}
+//		std::cout << y;
+//	
+//	return y;
+//	system("pause");
+//}
+
+//8
+//int SumArray(int mine[], int a)
+//{
+//	int y = 0;
+//	for (int i = 0; i < a; i++)
+//	{
+//		mine[i];
+//		for (int j = mine[i]; j <= mine[i]; j++)
+//		{
+//			y += j;
+//		}
+//	}
+//	std::cout << y;
+//
+//	return y;
+//	system("pause");
+//}
+
+//9
+int MinInArray(int a[], int b)
 {
 	int y = 0;
-	for (int i = 1; i <= N; i++)
+	for (int i = 0; i < b; i++)
 	{
-		y += i;
+		a[i];
+		for (int j = a[i]; j <= a[i]; j++)
+		{
+			if (j < j)
+			{
+				y = j;
+			}
+
+		}
 	}
-		std::cout << y;
-	
+	std::cout << y;
 	return y;
-	system("pause");
 }
+	
+
 
 
 int main()
 {
-	
+
 	//smlValue(10, 15);
 
 	//Half(16.721f);
 	//CoinFlip();
-	SumTo(15);
-	
+	//SumTo(15);
+	int ded[5] = { 7,3,2,4,9 };
+	//SumArray(ded, 5);
+	MinInArray(ded, 5);
+
+	system("pause");
 }
