@@ -69,20 +69,33 @@ int main()
 	//	system("pause"); WILL DISPLAY 85899460*/
 
 		//3
-	{
-		int data[255];
-		int i, x;
-		for (i = 0; i < 10; i++)
+	/*{
+		int data[10];
+
+		for (int i = 0; i < 10; i++)
 		{
-			data[i];
-			for (x = 10; x >= 1; x--)
+			for (int x = 10; x > 0; x--)
 			{
 				data[i] = x;
 			}
-			std::cout << x;
+			std::cout << data[i];
 		}
 		system("pause");
+	}*/
+	{
+		int test[5];
+		int row = 0;
+		for (int i = 0; i < 5; i++)
+		{
+			test[i] = i;
+			row + i;
+		}
+		cout << row;
+
+		system("pause");
 	}
+
+
 
 	//4
 	//int jesus[5] = { 2, 3, 4, 5, 6 };
