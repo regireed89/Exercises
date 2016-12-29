@@ -153,22 +153,20 @@ void CoinFlip()
 //9
 int MinInArray(int a[], int b)
 {
-	int y = 0;
+	int small = a[0];
 	for (int i = 0; i < b; i++)
 	{
-		a[i];
-		for (int j = a[i]; j <= a[i]; j++)
+		if (a[i] < small)
 		{
-			if (j < j)
-			{
-				y = j;
-			}
-
+			small = a[i];
 		}
 	}
-	std::cout << y;
-	return y;
+	std::cout << small;
+	return small;
 }
+
+//10
+
 	
 
 
@@ -181,9 +179,10 @@ int main()
 	//Half(16.721f);
 	//CoinFlip();
 	//SumTo(15);
-	int ded[5] = { 7,3,2,4,9 };
+	//int ded[5] = { 7,3,2,4,9 };
 	//SumArray(ded, 5);
-	MinInArray(ded, 5);
+	//int bud[7] = { 10,15,7,4,13,19,8 };
+	//MinInArray(bud, 7);
 
 	system("pause");
 }
