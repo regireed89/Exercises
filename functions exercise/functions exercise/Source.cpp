@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+using namespace std;
 
 //void PrintInteger(int variable)
 //{
@@ -184,10 +185,10 @@ int MultiplyByIndex(int firstarr[], int a, int secondarr[])
 }
 	
 //11
-int num11(int input1[], int input2[], int x, int output[])
+int num11(int input1[], int input2[], int size, int output[])
 {
 	int i;
-	for (i = 0; i < x; i++)
+	for (i = 0; i < size; i++)
 	{
 		input1[i];
 		input2[i];
@@ -206,20 +207,73 @@ int num11(int input1[], int input2[], int x, int output[])
 }
 
 //12
-int num12(int input1[], int a)
+int num12(int input1[], int size)
 {
 	int i;
-	for (i = 0; i < a; i++)
+	int y = 0;
+	for (i = 0; i < size; i++)
 	{
-		input1[i];
-		for (int j = input1[i]; j <= input1[i]; j++)
-		{
-			int y = j + input1[i];
-			input1[i] = y;
-		}
+		input1[i] += y;
+		y = input1[i];
+	
 		std::cout << input1[i];
 	}
 	return input1[i];
+}
+
+//13
+int num13(int input[], int size, int a)
+{
+	int i;
+	for (i = 0; i < size; i++)
+	{
+		input[i];
+		for (int j = input[i]; j <= input[i]; j++)
+		{
+			if (a == j)
+			{
+				std::cout << i;
+				return i;
+			}
+		}
+	}
+				return -1;
+}
+
+//14
+int Split(int input[], int size, int output1[], int output2[])
+{
+	int count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		input[i];
+		for (int j = input[i]; j <= input[i]; j++)
+		{
+			if (j >= 0)
+			{
+				output1[i] = j;
+				count++;
+			}
+			else
+			{
+				output2[i] = j;
+			}
+		}
+	}
+	cout << count;
+	return count;
+}
+
+//15
+int Power(int a, int b)
+{
+	int y = 1;
+	for (int i = 0; i < b; i++)
+	{
+		y *= a;
+	}
+	cout << y;
+	return y;
 }
 
 int main()
@@ -241,8 +295,14 @@ int main()
 	//int input2[5] = { 6,7,8,8,9 };
 	//int output[5] = {};
 	//num11(input1, input2, 5, output);
-	int i[4] = { 3,2,4,7 };
-	num12(i, 4);
-
+	//int i[4] = { 3,2,4,7 };
+	//num12(i, 4);
+	//int dub[4] = { 3,7,4,7 };
+	//num13(dub, 4, 7);
+	//int tom[10] = { 2,4,-6,-3,6,-3,-6,-53,5, 3 };
+	//int tom2[255] = {};
+	//int tom3[255] = {};
+	//Split(tom, 10, tom2, tom3);
+	//Power(3, 3);
 	system("pause");
 }
