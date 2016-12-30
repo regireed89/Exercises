@@ -166,10 +166,61 @@ int MinInArray(int a[], int b)
 }
 
 //10
-
+int MultiplyByIndex(int firstarr[], int a, int secondarr[])
+{
+	int i;
+	for (i = 0; i < a; i++)
+	{
+		firstarr[i];
+		secondarr[i];
+		for (int j = firstarr[i]; j <= firstarr[i]; j++)
+		{
+			int y = j*i;
+			secondarr[i] = y;
+		}
+		std::cout << secondarr[i];
+	}
+	return secondarr[i];
+}
 	
+//11
+int num11(int input1[], int input2[], int x, int output[])
+{
+	int i;
+	for (i = 0; i < x; i++)
+	{
+		input1[i];
+		input2[i];
+		for (int j = input1[i]; j <= input1[i]; j++)
+		{
+			for (int q = input2[i]; q <= input2[i]; q++)
+			{
+				int y = j + q;
+				output[i] = y;
+			}
+		}
+		std::cout << output[i];
+	}
+	return output[i];
 
+}
 
+//12
+int num12(int input1[], int a)
+{
+	int i;
+	for (i = 0; i < a; i++)
+	{
+		input1[i];
+		for (int j = input1[i]; j <= input1[i]; j++)
+		{
+			int y = j + input1[i];
+			input1[i] = y;
+		}
+		std::cout << input1[i];
+	}
+	return input1[i];
+}
 
 int main()
 {
@@ -181,8 +232,17 @@ int main()
 	//SumTo(15);
 	//int ded[5] = { 7,3,2,4,9 };
 	//SumArray(ded, 5);
-	//int bud[7] = { 10,15,7,4,13,19,8 };
+	//int bud[7] = { 10,15,7,4,13,19,8};
 	//MinInArray(bud, 7);
+	//int first[7] = { 10,15,7,4,13,19,8 };
+	//int second[7] = {};
+	//MultiplyByIndex(first, 7, second);
+	//int input1[5] = { 1,2,3,4,5 };
+	//int input2[5] = { 6,7,8,8,9 };
+	//int output[5] = {};
+	//num11(input1, input2, 5, output);
+	int i[4] = { 3,2,4,7 };
+	num12(i, 4);
 
 	system("pause");
 }
