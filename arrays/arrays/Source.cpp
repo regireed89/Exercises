@@ -71,29 +71,19 @@ int main()
 		//3
 	/*{
 		int data[10];
-
-		for (int i = 0; i < 10; i++)
+		int i;
+		for (i = 0; i < 10; i++)
 		{
 			for (int x = 10; x > 0; x--)
 			{
 				data[i] = x;
+				i++;
 			}
-			std::cout << data[i];
 		}
 		system("pause");
 	}*/
-	{
-		int test[5];
-		int row = 0;
-		for (int i = 0; i < 5; i++)
-		{
-			test[i] = i;
-			row + i;
-		}
-		cout << row;
 
-		system("pause");
-	}
+
 
 
 
@@ -141,11 +131,51 @@ int main()
 
 
 
-	   /*7
+	   //7
+	{
+		int row = 0;
+		int column = 0;
+		int count = 0;
+		int r = 0;
+		int c = 0;
+		int test[29][5];
 
-	   int days[29][5];*/
+		for (int i = 0; i < 29; i++)
+		{
+			for (int j = 0; j < 5; j++)
+			{
+				row += test[i][j];
+				count++;
+				if (count == 5)
+				{
+					r++;
+					cout << "sum of row " << r << " is " << row << endl;
+					count = 0;
+					row = 0;
+				}
+			}
+		}
 
-	   //8
+		for (int j = 0; j < 5; j++)
+		{
+			for (int i = 0; i < 29; i++)
+			{
+				column += test[i][j];
+				count++;
+				if (count == 29)
+				{
+					c++;
+					cout << "sum of column " << c << " is " << column << endl;
+					count = 0;
+					column = 0;
+				}
+			}
+		}
+		system("pause");
+	}
+
+
+	//8
 	int health[5] = { 100, 100, 100, 100, 100, };
 	int x = 0;
 
@@ -246,7 +276,26 @@ int main()
 
 	//9
 
-	//int Eat[3][7] = {}
+	int dragon[3][7] = { {1234567},
+	{1234567},
+	{1234567} };
+
+	for (int j = 0; j < 5; j++)
+	{
+		for (int i = 0; i < 29; i++)
+		{
+			column += test[i][j];
+			count++;
+			if (count == 29)
+			{
+				c++;
+				cout << "sum of column " << c << " is " << column << endl;
+				count = 0;
+				column = 0;
+			}
+		}
+	}
+
 
 
 
