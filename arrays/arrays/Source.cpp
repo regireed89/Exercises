@@ -284,7 +284,7 @@ int main()
 	{
 		for (int i = 0; i < 29; i++)
 		{
-			column += test[i][j];
+			column += dragon[i][j];
 			count++;
 			if (count == 29)
 			{
