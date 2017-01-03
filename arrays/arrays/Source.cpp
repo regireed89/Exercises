@@ -109,10 +109,6 @@ int main()
 	system("pause");*/
 
 	//6
-
-
-
-
 	/*	int orange[3][3] = { {1, 2, 3},
 
 							{4, 5, 6},
@@ -132,7 +128,7 @@ int main()
 
 
 	   //7
-	{
+	/*{
 		int row = 0;
 		int column = 0;
 		int count = 0;
@@ -172,11 +168,11 @@ int main()
 			}
 		}
 		system("pause");
-	}
+	}*/
 
 
 	//8
-	int health[5] = { 100, 100, 100, 100, 100, };
+	/*int health[5] = { 100, 100, 100, 100, 100, };
 	int x = 0;
 
 	int inputNum = 0;
@@ -268,7 +264,7 @@ int main()
 
 	std::cout << "player 4 has " << health[3] << " health" << endl;
 
-	std::cout << "player 5 has " << health[4] << " health" << endl;
+	std::cout << "player 5 has " << health[4] << " health" << endl;*/
 
 
 
@@ -276,32 +272,85 @@ int main()
 
 	//9
 
-	int dragon[3][7] = { {1234567},
-	{1234567},
-	{1234567} };
+	int days = 0;
+	float avgPerDay = 0;
+	int dragon[3][7] = { {1,12,28,34,5,16,87},
+	{19,67,29,55,4,2,6},
+	{59,22,45,78,8,9,51} };
 
-	for (int j = 0; j < 5; j++)
 	{
-		for (int i = 0; i < 29; i++)
+		for (int i = 0; i < 3; i++)
 		{
-			column += dragon[i][j];
-			count++;
-			if (count == 29)
+			for (int j = 0; j < 7; j++)
 			{
-				c++;
-				cout << "sum of column " << c << " is " << column << endl;
-				count = 0;
-				column = 0;
+				avgPerDay += dragon[i][j];
 			}
+
 		}
+		avgPerDay /= 7;
+		cout << "average amount of food eaten by all dragons per day is " << avgPerDay << " kilos" << endl;
+		avgPerDay = 0;
+		system("pause");
 	}
 
 
+	{
+		int count = 0;
+		int drag = 0;
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 7; j++)
+			{
+				avgPerDay += dragon[i][j];
+				count++;
+				if (count == 7)
+				{
+					drag++;
+					avgPerDay /= 7;
+					cout << "average amount of food eaten by dragon " << drag << " per day is " << avgPerDay << " kilos" << endl;
+					count = 0;
+				}
+			}
+			avgPerDay = 0;
+		}
+		system("pause");
+	}
 
 
-
-	system("pause");
-
+	{
+		int most = dragon[0][0];
+		int least = dragon[0][0];
+		int him = 0;
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 7; j++)
+			{
+				if (dragon[i][j] > most)
+				{
+					most = dragon[i][j];
+					if (i == 0)
+						him = 1;
+					else if (i == 1)
+						him = 2;
+					else if (i == 2)
+						him = 3;
+				}
+				else if (dragon[i][j] < least)
+				{
+					least = dragon[i][j];
+					if (i == 0)
+						him = 1;
+					else if (i == 1)
+						him = 2;
+					else if (i == 2)
+						him = 3;
+				}
+			}
+		}
+		cout << "dragon " << him << " ate the most food with " << most << " kilos " << endl;
+		cout << "dragon " << him << " ate the least food with " << least << " kilos " << endl;
+		system("pause");
+	}
 
 
 
